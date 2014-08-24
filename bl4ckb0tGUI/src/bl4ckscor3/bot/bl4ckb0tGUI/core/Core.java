@@ -14,11 +14,12 @@ import bl4ckscor3.bot.bl4ckb0tGUI.gui.Gui;
 public class Core
 {
 	public static PircBotX bot;
+	public static Gui gui;
 	
 	public static void main(String args[]) throws IOException, IrcException
 	{
-//		createBot();
 		setupGui();
+		createBot();
 	}
 
 	public static void createBot() throws IOException, IrcException
@@ -31,7 +32,7 @@ public class Core
 		.setNickservPassword("xxx")
 		.setLogin("bl4ckb0t")
 		.setAutoNickChange(true)
-		.addListener(new Listener())
+		.addListener(new BotListener())
 		.setMessageDelay(500)
 		.buildConfiguration();
 		bot = new PircBotX(config);
@@ -40,7 +41,7 @@ public class Core
 	
 	private static void setupGui()
 	{
-		Gui gui = new Gui();
+		gui = new Gui();
 
 		gui.setTitle("bl4ckb0t");
 		gui.setFont(new Font("Arial", 0, 14));
