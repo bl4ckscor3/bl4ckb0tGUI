@@ -1,8 +1,10 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
-public interface Command<Event>
+import java.io.IOException;
+
+public interface Command
 {
-	public void exe(Event event);
+	public void exe() throws IOException;
 	
 	public String getAlias();
 }

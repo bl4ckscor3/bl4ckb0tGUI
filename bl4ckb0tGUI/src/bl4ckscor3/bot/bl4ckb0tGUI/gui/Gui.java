@@ -14,32 +14,59 @@ public class Gui extends JFrame
 {
 	private Container cp = getContentPane();
 	private ButtonListener listener = new ButtonListener();
+	public String receiver;
 	private JLabel[] label = 
 		{
-			new JLabel() //-changenick
+			new JLabel(), //-bukkit
+			new JLabel(), //-changenick
+			new JLabel()  //chan/user to send to
 		};
-	public JTextField[] text = 
+	public JTextField[][] text = 
 		{
-			new JTextField() //-changenick
+			new JTextField[]{new JTextField()}, //-bukkit
+			new JTextField[]{new JTextField()}, //-changenick
+			new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	private JButton[] button = 
 		{
-			new JButton() //-changenick
+			new JButton(), //-bukkit
+			new JButton()  //-changenick
 		};
 	
 	public Gui()
 	{
 		cp.setLayout(null);
 		
-		label[0].setText("-changenick");
-		label[0].setBounds(30, 20, 110, 20); //pos x, pos y, width, height
-		text[0].setBounds(130, 20, 110, 20);
-		button[0].setText("Issue '-changenick'");
+		label[0].setText("-bukkit");
+		text[0][0].setBounds(130, 20, 110, 20);
+		button[0].setText("Issue '-bukkit'");
 		
+		label[1].setText("-changenick");
+		text[1][0].setBounds(130, 40, 110, 20);
+		button[1].setText("Issue '-changenick'");
+		
+		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
+		text[text.length - 1][0].setBounds(310, 730, 150, 20);
+		
+		setLabelBounds();
 		setButtonBounds();
 		addComponentArray(label);
-		addComponentArray(text);
+		addNestedComponentArray(text);
 		addComponentArray(button);
+	}
+	
+	private void setLabelBounds()
+	{
+		int posY = 20;
+		
+		for(JLabel l : label)
+		{
+			l.setBounds(30, posY, 110, 20);
+			posY = posY + 20;
+		}
+		
+		//Special Labels
+		label[label.length - 1].setBounds(55, 700, 800, 20);
 	}
 	
 	private void setButtonBounds()
@@ -58,5 +85,14 @@ public class Gui extends JFrame
 	{
 		for(Component c : component)
 			cp.add(c);
+	}
+	
+	private void addNestedComponentArray(Component[][] component) 
+	{
+		for(Component[] comp : component)
+		{
+			for(Component c : comp)
+				cp.add(c);
+		}
 	}
 }
