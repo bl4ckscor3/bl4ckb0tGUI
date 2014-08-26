@@ -19,4 +19,9 @@ public class Utilities
 		else
 			return new String[]{"#bl4ckb0tTest"};
 	}
+	
+	public static void sendMessage(String target, String message)
+	{
+		Core.bot.sendIRC().message(target, message);
+	}
 }

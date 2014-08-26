@@ -8,6 +8,7 @@ import java.net.URL;
 import org.pircbotx.Colors;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Bukkit implements Command
 {
@@ -54,7 +55,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Core.bot.sendIRC().message(Core.gui.receiver, Colors.DARK_GREEN + "the version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.DARK_GREEN + "the version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
@@ -93,7 +94,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Core.bot.sendIRC().message(Core.gui.receiver, Colors.PURPLE + "the version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.PURPLE + "the version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
@@ -132,7 +133,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Core.bot.sendIRC().message(Core.gui.receiver, Colors.RED + "the version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.RED + "the version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
