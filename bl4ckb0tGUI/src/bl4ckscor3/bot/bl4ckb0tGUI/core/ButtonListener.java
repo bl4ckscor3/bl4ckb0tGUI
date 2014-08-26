@@ -25,6 +25,7 @@ public class ButtonListener implements ActionListener
 	public ButtonListener()
 	{
 		commands.add(new Bukkit());
+		commands.add(new Calculate());
 		commands.add(new ChangeNick());
 	}
 

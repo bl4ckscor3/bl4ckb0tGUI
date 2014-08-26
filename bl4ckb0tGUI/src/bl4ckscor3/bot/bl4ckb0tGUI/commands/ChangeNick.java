@@ -7,10 +7,10 @@ public class ChangeNick implements Command
 	@Override
 	public void exe() 
 	{
-		if(Core.gui.text[1][0].getText().equals("d"))
-			Core.bot.sendIRC().changeNick("bl4ckb0t1");
+		if(Core.gui.text[2][0].getText().equals("d"))
+			Core.bot.sendIRC().changeNick("bl4ckb0t");
 		else
-			Core.bot.sendIRC().changeNick(Core.gui.text[1][0].getText());
+			Core.bot.sendIRC().changeNick(Core.gui.text[2][0].getText());
 	}
 
 	@Override
