@@ -33,7 +33,7 @@ public class ButtonListener implements ActionListener
 		{
 			if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
 			{
-				Core.gui.receiver = Core.gui.text[Core.gui.text.length - 1][0].getText();
+				Core.gui.receiver = Core.dev ? "#bl4ckb0tTest" : Core.gui.text[Core.gui.text.length - 1][0].getText();
 				
 				try
 				{
