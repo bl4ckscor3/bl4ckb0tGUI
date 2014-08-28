@@ -3,6 +3,9 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +22,7 @@ public class NameGui extends JFrame
 	private JButton buttonStop = new JButton();
 	private String textText = "Please insert your username below.";
 	private Container cp = getContentPane();
-	
+
 	public NameGui()
 	{
 		cp.setLayout(null);
@@ -37,12 +40,22 @@ public class NameGui extends JFrame
 		cp.add(buttonStart);
 		cp.add(buttonStop);
 	}
-	
+
 	private class ButtonListener implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent event)
 		{
+			ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
+			Runnable r = new Runnable()
+			{
+				@Override
+				public void run() 
+				{
+					Core.createBot();
+				}
+			};
+
 			switch(event.getActionCommand())
 			{
 				case "Let's start!":
@@ -50,10 +63,10 @@ public class NameGui extends JFrame
 						Core.name = text.getText();
 					else
 						Core.name = "Anonymous";
-					
+
 					Core.nameGui.dispose();
 					Core.setupGui();
-					Core.createBot();
+					worker.schedule(r, 1, TimeUnit.SECONDS);
 					break;
 				case "I changed my mind.":
 					System.exit(0);

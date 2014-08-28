@@ -1,15 +1,10 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.core;
 
-import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.LinkedList;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Bukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
@@ -56,7 +51,7 @@ public class ButtonListener implements ActionListener
 					warningGui.setFont(new Font("Arial", 0, 14));
 					warningGui.setSize(300, 150);
 					warningGui.setLocationRelativeTo(null);
-					warningGui.setEnabled(true);
+					warningGui.setResizable(false);
 					warningGui.setVisible(true);
 				}
 
