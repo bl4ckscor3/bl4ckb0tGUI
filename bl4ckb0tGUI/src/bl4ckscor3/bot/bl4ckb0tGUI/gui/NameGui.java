@@ -59,7 +59,7 @@ public class NameGui extends JFrame
 			switch(event.getActionCommand())
 			{
 				case "Let's start!":
-					if(Core.name != null)
+					if(text.getText() != null)
 						Core.name = text.getText();
 					else
 						Core.name = "Anonymous";
