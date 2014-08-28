@@ -15,6 +15,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Bukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Command;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 
 public class ButtonListener implements ActionListener
@@ -40,6 +41,9 @@ public class ButtonListener implements ActionListener
 				
 				try
 				{
+					if(!c.getAlias().equals("changenick"))
+						Utilities.sendMessage(Core.gui.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
+					
 					c.exe();
 				}
 				catch(IOException e){}
