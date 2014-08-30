@@ -20,6 +20,7 @@ public class Gui extends JFrame
 		{
 			new JLabel(), //-bukkit
 			new JLabel(), //-calc
+			new JLabel(), //-cbukkit
 			new JLabel(), //-changenick
 			new JLabel()  //chan/user to send to
 		};
@@ -27,6 +28,7 @@ public class Gui extends JFrame
 		{
 			new JTextField[]{new JTextField()}, //-bukkit
 			new JTextField[]{new JTextField(), new JTextField()}, //-calc
+			new JTextField[]{new JTextField()}, //-cbukkit
 			new JTextField[]{new JTextField()}, //-changenick
 			new JTextField[]{new JTextField()}  //chan/user to send to
 		};
@@ -34,6 +36,7 @@ public class Gui extends JFrame
 		{
 			new JButton(), //-bukkit
 			new JButton(), //-calc
+			new JButton(), //-cbukkit
 			new JButton()  //-changenick
 		};
 	
@@ -48,8 +51,11 @@ public class Gui extends JFrame
 		text[1][0].setDocument(new JTextFieldLimited(1));
 		button[1].setText("Issue '-calc'");
 		
-		label[2].setText("-changenick");
-		button[2].setText("Issue '-changenick'");
+		label[2].setText("-cbukkit");
+		button[2].setText("Issue '-cbukkit'");
+		
+		label[3].setText("-changenick");
+		button[3].setText("Issue '-changenick'");
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 		
