@@ -11,6 +11,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Command;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
@@ -26,6 +27,7 @@ public class ButtonListener implements ActionListener
 		commands.add(new Calculate());
 		commands.add(new ChangeNick());
 		commands.add(new CraftBukkit());
+		commands.add(new Decide());
 	}
 
 	@Override

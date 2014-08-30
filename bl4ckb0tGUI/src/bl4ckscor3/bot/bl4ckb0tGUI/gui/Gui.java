@@ -22,6 +22,7 @@ public class Gui extends JFrame
 			new JLabel(), //-calc
 			new JLabel(), //-cbukkit
 			new JLabel(), //-changenick
+			new JLabel(), //-decide
 			new JLabel()  //chan/user to send to
 		};
 	public JTextField[][] text = 
@@ -30,6 +31,7 @@ public class Gui extends JFrame
 			new JTextField[]{new JTextField(), new JTextField()}, //-calc
 			new JTextField[]{new JTextField()}, //-cbukkit
 			new JTextField[]{new JTextField()}, //-changenick
+			new JTextField[]{new JTextField()}, //-decide
 			new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	private JButton[] button = 
@@ -37,6 +39,7 @@ public class Gui extends JFrame
 			new JButton(), //-bukkit
 			new JButton(), //-calc
 			new JButton(), //-cbukkit
+			new JButton(), //-decide
 			new JButton()  //-changenick
 		};
 	
@@ -56,6 +59,9 @@ public class Gui extends JFrame
 		
 		label[3].setText("-changenick");
 		button[3].setText("Issue '-changenick'");
+		
+		label[4].setText("-decide");
+		button[4].setText("Issue '-decide'");
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 		
