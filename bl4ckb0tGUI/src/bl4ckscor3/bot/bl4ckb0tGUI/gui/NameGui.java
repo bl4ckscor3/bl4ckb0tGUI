@@ -33,13 +33,12 @@ public class NameGui extends JFrame
 				}
 			};
 			
-			if(text.getText() != null)
+			if(!text.getText().equals(""))
 				Core.name = text.getText();
-			else
-				Core.name = "Anonymous";
 
+			System.out.println(Core.name + " ?= " + text.getText());
+			
 			Core.nameGui.dispose();
-			System.out.println("start");
 			Core.setupGui();
 			worker.schedule(r, 1, TimeUnit.SECONDS);
 		}

@@ -16,7 +16,7 @@ public class Core
 {
 	public static PircBotX bot;
 	public static Gui gui;
-	public static String name;
+	public static String name = "Anonymous";
 	public static NameGui nameGui;
 	public static boolean dev = true;
 
