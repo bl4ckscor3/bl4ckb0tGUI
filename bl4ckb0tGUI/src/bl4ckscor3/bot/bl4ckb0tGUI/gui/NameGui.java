@@ -2,7 +2,6 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
 
 public class NameGui extends JFrame
 {
@@ -72,22 +72,10 @@ public class NameGui extends JFrame
 		getRootPane().setDefaultButton(buttonStart);
 		buttonStop.setText("I changed my mind.");
 		buttonStop.setBounds(130, 80, 145 , 20);
-		buttonStop.addActionListener(new ButtonListener());
+		buttonStop.addActionListener(new NameGuiButtonListener());
 		cp.add(label);
 		cp.add(text);
 		cp.add(buttonStart);
 		cp.add(buttonStop);
-	}
-
-	private class ButtonListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent event)
-		{
-			if(firstRun)
-				System.exit(0);
-			else
-				dispose();
-		}
 	}
 }

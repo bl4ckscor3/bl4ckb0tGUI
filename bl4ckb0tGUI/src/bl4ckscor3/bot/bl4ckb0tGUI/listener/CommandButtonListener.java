@@ -1,4 +1,4 @@
-package bl4ckscor3.bot.bl4ckb0tGUI.core;
+package bl4ckscor3.bot.bl4ckb0tGUI.listener;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -12,16 +12,16 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Command;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
+import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
-
-public class MainListener implements ActionListener
+public class CommandButtonListener implements ActionListener
 {
 	private LinkedList<Command> commands = new LinkedList();
 	public static WarningGui warningGui;
 	
-	public MainListener()
+	public CommandButtonListener()
 	{
 		commands.add(new Bukkit());
 		commands.add(new Calculate());

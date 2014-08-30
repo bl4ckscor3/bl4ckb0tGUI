@@ -9,13 +9,14 @@ import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.exception.IrcException;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.Gui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.MainGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.NameGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
 
 public class Core
 {
 	public static PircBotX bot;
-	public static Gui gui;
+	public static MainGui gui;
 	public static String name = "Anonymous";
 	public static NameGui nameGui;
 	public static boolean dev = true;
@@ -44,7 +45,7 @@ public class Core
 
 	public static void setupGui()
 	{
-		gui = new Gui();
+		gui = new MainGui();
 
 		gui.setTitle("bl4ckb0t");
 		gui.setFont(new Font("Arial", 0, 14));

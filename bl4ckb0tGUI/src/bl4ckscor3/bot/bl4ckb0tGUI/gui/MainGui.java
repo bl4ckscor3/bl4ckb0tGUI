@@ -2,22 +2,20 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
-import bl4ckscor3.bot.bl4ckb0tGUI.core.MainListener;
 import bl4ckscor3.bot.bl4ckb0tGUI.document.JTextFieldLimited;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.MainGuiButtonListener;
 
-public class Gui extends JFrame
+public class MainGui extends JFrame
 {
 	private Container cp = getContentPane();
-	private MainListener listener = new MainListener();
+	private CommandButtonListener listener = new CommandButtonListener();
 	public String receiver;
 	private JLabel[] label = 
 		{
@@ -47,7 +45,7 @@ public class Gui extends JFrame
 			new JButton(), //change name
 		};
 	
-	public Gui()
+	public MainGui()
 	{
 		cp.setLayout(null);
 		
@@ -69,7 +67,7 @@ public class Gui extends JFrame
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 		button[button.length - 1].setText("Change Name");
-		button[button.length - 1].addActionListener(new ButtonListener());
+		button[button.length - 1].addActionListener(new MainGuiButtonListener());
 		setLabelBounds();
 		setTextBounds();
 		setButtonBounds();
@@ -146,15 +144,6 @@ public class Gui extends JFrame
 		{
 			for(Component c : comp)
 				cp.add(c);
-		}
-	}
-	
-	private class ButtonListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent event)
-		{
-			Core.setupNameGui();
 		}
 	}
 }
