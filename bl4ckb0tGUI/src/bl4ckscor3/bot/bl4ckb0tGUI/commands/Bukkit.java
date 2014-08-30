@@ -18,20 +18,17 @@ public class Bukkit implements Command
 		String buffer = "x";
 		String type = Core.gui.text[0][0].getText();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://dl.bukkit.org/downloads/bukkit/").openStream()));
+		String[] link;
+		String newUrl;
+		String version;
+		BufferedReader versionReader;
 
 		switch(type)
 		{
 			case "rec":
-				for(int i = 0; i < 1301; i++)
+				while((buffer = reader.readLine()) != null)
 				{
-					String[] link;
-					String newUrl;
-					String version;
-					BufferedReader versionReader;
-
-					buffer = reader.readLine();
-
-					if(buffer.contains("downloadButton chan-rb mini"))
+					if(buffer.contains("downloadButton chan-rb  mini"))
 					{
 						//Code for the DL-Link
 						while(!buffer.contains("href"))
@@ -55,22 +52,15 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.DARK_GREEN + "the version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.DARK_GREEN + "The version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
-						break;
 					}
 				}
+				break;
 			case "beta":
-				for(int i = 0; i < 1301; i++)
+				while((buffer = reader.readLine()) != null)
 				{
-					String[] link;
-					String newUrl;
-					String version;
-					BufferedReader versionReader;
-
-					buffer = reader.readLine();
-
-					if(buffer.contains("downloadButton chan-beta mini"))
+					if(buffer.contains("downloadButton chan-beta  mini"))
 					{
 						//Code for the DL-Link
 						while(!buffer.contains("href"))
@@ -94,22 +84,15 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.PURPLE + "the version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.PURPLE + "The version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
-						break;
 					}
 				}
+				break;
 			case "dev":
-				for(int i = 0; i < 1301; i++)
+				while((buffer = reader.readLine()) != null)
 				{
-					String[] link;
-					String newUrl;
-					String version;
-					BufferedReader versionReader;
-
-					buffer = reader.readLine();
-
-					if(buffer.contains("downloadButton chan-dev mini"))
+					if(buffer.contains("downloadButton chan-dev  mini"))
 					{
 						//Code for the DL-Link
 						while(!buffer.contains("href"))
@@ -133,11 +116,12 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.RED + "the version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(Core.gui.receiver, Colors.RED + "The version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
 				}
+				break;
 			default:
 				System.out.println("Error: " + type);
 		}
