@@ -7,10 +7,12 @@ import javax.swing.text.PlainDocument;
 public class JTextFieldLimited extends PlainDocument
 {
 	private int limit;
+	private String[] allowedChars;
 	
-	public JTextFieldLimited(int limitation)
+	public JTextFieldLimited(int limitation, String... allowedChars)
 	{
 		limit = limitation;
+		this.allowedChars = allowedChars;
 	}
 	
 	@Override
@@ -19,6 +21,15 @@ public class JTextFieldLimited extends PlainDocument
 		if(s == null)
 			return;
 		else if(getLength() + s.length() <= limit)
-			super.insertString(offset, s, set);
+		{
+			for(String str : allowedChars)
+			{
+				if(s.equals(str))
+				{
+					super.insertString(offset, s, set);
+					break;
+				}
+			}
+		}
 	}
 }

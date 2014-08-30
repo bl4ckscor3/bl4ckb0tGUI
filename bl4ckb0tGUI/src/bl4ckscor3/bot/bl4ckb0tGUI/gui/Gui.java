@@ -48,7 +48,7 @@ public class Gui extends JFrame
 		button[0].setText("Issue '-bukkit'");
 		
 		label[1].setText("-calc");
-		text[1][0].setDocument(new JTextFieldLimited(1));
+		text[1][0].setDocument(new JTextFieldLimited(1, "+", "-", "*", "/", "^", "%", "!"));
 		button[1].setText("Issue '-calc'");
 		
 		label[2].setText("-cbukkit");
