@@ -48,20 +48,20 @@ public class Gui extends JFrame
 		cp.setLayout(null);
 		
 		label[0].setText("-bukkit");
-		button[0].setText("Issue '-bukkit'");
+		button[0].setText(getButtonText(0));
 		
 		label[1].setText("-calc");
 		text[1][0].setDocument(new JTextFieldLimited(1, "+", "-", "*", "/", "^", "%", "!"));
-		button[1].setText("Issue '-calc'");
+		button[1].setText(getButtonText(1));
 		
 		label[2].setText("-cbukkit");
-		button[2].setText("Issue '-cbukkit'");
+		button[2].setText(getButtonText(2));
 		
 		label[3].setText("-changenick");
-		button[3].setText("Issue '-changenick'");
+		button[3].setText(getButtonText(3));
 		
 		label[4].setText("-decide");
-		button[4].setText("Issue '-decide'");
+		button[4].setText(getButtonText(4));
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 		
@@ -71,6 +71,11 @@ public class Gui extends JFrame
 		addComponentArray(label);
 		addNestedComponentArray(text);
 		addComponentArray(button);
+	}
+	
+	private String getButtonText(int labelArrayPosition)
+	{
+		return "Issue '" + label[labelArrayPosition].getText() + "'";
 	}
 	
 	private void setLabelBounds()
