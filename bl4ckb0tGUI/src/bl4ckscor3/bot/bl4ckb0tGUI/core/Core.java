@@ -25,7 +25,7 @@ public class Core
 		setupNameGui();
 	}
 	
-	private static void setupNameGui()
+	public static void setupNameGui()
 	{
 		nameGui = new NameGui();
 
@@ -33,7 +33,11 @@ public class Core
 		nameGui.setFont(new Font("Arial", 0, 14));
 		nameGui.setSize(300, 150);
 		nameGui.setLocationRelativeTo(null);
-		nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		if(NameGui.firstRun)
+			nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		else
+			nameGui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		nameGui.setResizable(false);
 		nameGui.setVisible(true);
 	}

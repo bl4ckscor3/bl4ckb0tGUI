@@ -2,19 +2,22 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.ButtonListener;
+import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.core.MainListener;
 import bl4ckscor3.bot.bl4ckb0tGUI.document.JTextFieldLimited;
 
 public class Gui extends JFrame
 {
 	private Container cp = getContentPane();
-	private ButtonListener listener = new ButtonListener();
+	private MainListener listener = new MainListener();
 	public String receiver;
 	private JLabel[] label = 
 		{
@@ -40,7 +43,8 @@ public class Gui extends JFrame
 			new JButton(), //-calc
 			new JButton(), //-cbukkit
 			new JButton(), //-decide
-			new JButton()  //-changenick
+			new JButton(), //-changenick
+			new JButton(), //change name
 		};
 	
 	public Gui()
@@ -64,7 +68,8 @@ public class Gui extends JFrame
 		button[4].setText(getButtonText(4));
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
-		
+		button[button.length - 1].setText("Change Name");
+		button[button.length - 1].addActionListener(new ButtonListener());
 		setLabelBounds();
 		setTextBounds();
 		setButtonBounds();
@@ -80,7 +85,7 @@ public class Gui extends JFrame
 	
 	private void setLabelBounds()
 	{
-		int posY = 20;
+		int posY = 120;
 		
 		for(JLabel l : label)
 		{
@@ -95,7 +100,7 @@ public class Gui extends JFrame
 	private void setTextBounds()
 	{
 		int x;
-		int y = 20;
+		int y = 120;
 		
 		for(JTextField[] txt : text)
 		{
@@ -110,13 +115,13 @@ public class Gui extends JFrame
 			y = y + 20;
 		}
 		
-		//Special text
+		//Special texts
 		text[text.length - 1][0].setBounds(310, 730, 150, 20);
 	}
 	
 	private void setButtonBounds()
 	{
-		int posY = 20;
+		int posY = 120;
 		
 		for(JButton b : button)
 		{			
@@ -124,6 +129,9 @@ public class Gui extends JFrame
 			posY = posY + 20;
 			b.addActionListener(listener);
 		}
+		
+		//Special buttons
+		button[button.length - 1].setBounds(260, 40, 120, 40);
 	}
 	
 	private void addComponentArray(Component[] component) 
@@ -138,6 +146,15 @@ public class Gui extends JFrame
 		{
 			for(Component c : comp)
 				cp.add(c);
+		}
+	}
+	
+	private class ButtonListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent event)
+		{
+			Core.setupNameGui();
 		}
 	}
 }

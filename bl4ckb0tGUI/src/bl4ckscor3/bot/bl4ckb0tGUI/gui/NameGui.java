@@ -18,6 +18,14 @@ import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 
 public class NameGui extends JFrame
 {
+
+	public static boolean firstRun = true;
+	private JLabel label = new JLabel();
+	private JTextField text = new JTextField();
+	private JButton buttonStart;
+	private JButton buttonStop = new JButton();
+	private String textText = "Please insert your username below.";
+	private Container cp = getContentPane();
 	Action accept = new AbstractAction("Accept")
 	{
 		@Override
@@ -29,6 +37,7 @@ public class NameGui extends JFrame
 				@Override
 				public void run() 
 				{
+					firstRun = false;
 					Core.createBot();
 				}
 			};
@@ -36,27 +45,29 @@ public class NameGui extends JFrame
 			if(!text.getText().equals(""))
 				Core.name = text.getText();
 
-			System.out.println(Core.name + " ?= " + text.getText());
-			
 			Core.nameGui.dispose();
-			Core.setupGui();
-			worker.schedule(r, 1, TimeUnit.SECONDS);
+			
+			if(firstRun)
+			{
+				Core.setupGui();
+				worker.schedule(r, 10, TimeUnit.MILLISECONDS);
+			}
 		}
 	};
-	private JLabel label = new JLabel();
-	private JTextField text = new JTextField();
-	private JButton buttonStart = new JButton(accept);
-	private JButton buttonStop = new JButton();
-	private String textText = "Please insert your username below.";
-	private Container cp = getContentPane();
 
 	public NameGui()
 	{
+		buttonStart = new JButton(accept);
 		cp.setLayout(null);
 		label.setBounds(40, 10, textText.length() * 6, 20);
 		label.setText(textText);
 		text.setBounds(42, 40, 200, 20);
-		buttonStart.setText("Let's start!");
+		
+		if(firstRun)
+			buttonStart.setText("Let's start!");
+		else
+			buttonStart.setText("Change it!");
+		
 		buttonStart.setBounds(10, 80, 100, 20);
 		getRootPane().setDefaultButton(buttonStart);
 		buttonStop.setText("I changed my mind.");
@@ -73,7 +84,10 @@ public class NameGui extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent event)
 		{
-			System.exit(0);
+			if(firstRun)
+				System.exit(0);
+			else
+				dispose();
 		}
 	}
 }

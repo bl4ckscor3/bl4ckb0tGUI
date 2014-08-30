@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.ButtonListener;
+import bl4ckscor3.bot.bl4ckb0tGUI.core.MainListener;
 
 public class WarningGui extends JFrame
 {
@@ -35,7 +35,7 @@ public class WarningGui extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent event)
 		{
-			ButtonListener.warningGui.dispose();
+			MainListener.warningGui.dispose();
 		}
 	}
 }

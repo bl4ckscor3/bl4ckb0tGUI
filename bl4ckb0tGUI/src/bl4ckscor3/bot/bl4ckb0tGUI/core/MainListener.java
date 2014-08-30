@@ -16,12 +16,12 @@ import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 
-public class ButtonListener implements ActionListener
+public class MainListener implements ActionListener
 {
 	private LinkedList<Command> commands = new LinkedList();
 	public static WarningGui warningGui;
 	
-	public ButtonListener()
+	public MainListener()
 	{
 		commands.add(new Bukkit());
 		commands.add(new Calculate());
