@@ -29,7 +29,7 @@ public class WarningGui extends JFrame
 		label.setBounds(65, 20, 200, 20);
 		button.setText("OK!");
 		button.setBounds(95, 60, 100, 20);
-		button.addActionListener(new WarningGuiButtonListener());
+		button.addActionListener(new WarningGuiButtonListener(this));
 		
 		add(label);
 		add(button);
