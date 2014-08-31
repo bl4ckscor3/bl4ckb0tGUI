@@ -42,6 +42,9 @@ public class MainGui extends JFrame
 			new JButton(), //-cbukkit
 			new JButton(), //-decide
 			new JButton(), //-changenick
+			new JButton(), //disabling the bot
+			new JButton(), //enabling the bot
+			new JButton(), //reboot
 			new JButton(), //change name
 		};
 	
@@ -66,10 +69,15 @@ public class MainGui extends JFrame
 		button[4].setText(getButtonText(4));
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
+		button[button.length - 4].setText("Disable bot");
+		button[button.length - 4].addActionListener(new MainGuiButtonListener());
+		button[button.length - 3].setText("Enable bot");
+		button[button.length - 3].addActionListener(new MainGuiButtonListener());
 		button[button.length - 2].setText("Restart program");
 		button[button.length - 2].addActionListener(new MainGuiButtonListener());
 		button[button.length - 1].setText("Change Name");
 		button[button.length - 1].addActionListener(new MainGuiButtonListener());
+	
 		setLabelBounds();
 		setTextBounds();
 		setButtonBounds();
@@ -115,7 +123,7 @@ public class MainGui extends JFrame
 			y = y + 20;
 		}
 		
-		//Special texts
+		//Special textfields
 		text[text.length - 1][0].setBounds(310, 730, 150, 20);
 	}
 	
@@ -130,9 +138,11 @@ public class MainGui extends JFrame
 			b.addActionListener(listener);
 		}
 		
-		//Special buttons
-		button[button.length - 2].setBounds(400, 40, 140, 40);
-		button[button.length - 1].setBounds(260, 40, 120, 40);
+		//Special buttons	
+		button[button.length - 4].setBounds(560, 40, 120, 40); //disabling the bot
+		button[button.length - 3].setBounds(420, 40, 120, 40); //enabling the bot
+		button[button.length - 2].setBounds(260, 40, 140, 40); //reboot
+		button[button.length - 1].setBounds(120, 40, 120, 40); //change name
 	}
 	
 	private void addComponentArray(Component[] component) 

@@ -19,8 +19,8 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 public class CommandButtonListener implements ActionListener
 {
 	private LinkedList<Command> commands = new LinkedList();
-	public static WarningGui warningGui;
-	
+	public static boolean enabled = true;
+
 	public CommandButtonListener()
 	{
 		commands.add(new Bukkit());
@@ -33,27 +33,30 @@ public class CommandButtonListener implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent event) 
 	{
-		for(Command c : commands)
+		if(enabled)
 		{
-			if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
+			for(Command c : commands)
 			{
-				Core.gui.receiver = Core.dev ? "#bl4ckb0tTest" : Core.gui.text[Core.gui.text.length - 1][0].getText();
-				
-				try
+				if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
 				{
-					if(!c.getAlias().equals("changenick"))
-						Utilities.sendMessage(Core.gui.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
-					
-					c.exe();
+					Core.gui.receiver = Core.dev ? "#bl4ckb0tTest" : Core.gui.text[Core.gui.text.length - 1][0].getText();
+
+					try
+					{
+						if(!c.getAlias().equals("changenick"))
+							Utilities.sendMessage(Core.gui.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
+						
+						c.exe();
+					}
+					catch(IOException e){}
+					catch(IllegalArgumentException e)
+					{
+						new WarningGui("No target set!", "You need to specify a target!");
+					}	
+					return;
 				}
-				catch(IOException e){}
-				catch(IllegalArgumentException e)
-				{
-					warningGui = new WarningGui("WARNING", "You need to specify a target!");
-				}	
-				return;
 			}
+			System.out.println("Something went wrong.");
 		}
-		System.out.println("Something went wrong.");
 	}
 }
