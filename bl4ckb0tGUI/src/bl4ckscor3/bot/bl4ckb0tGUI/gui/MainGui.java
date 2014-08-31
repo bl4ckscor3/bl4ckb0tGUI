@@ -35,7 +35,7 @@ public class MainGui extends JFrame
 			new JTextField[]{new JTextField()}, //-decide
 			new JTextField[]{new JTextField()}  //chan/user to send to
 		};
-	private JButton[] button = 
+	public JButton[] button = 
 		{
 			new JButton(), //-bukkit
 			new JButton(), //-calc
@@ -66,6 +66,8 @@ public class MainGui extends JFrame
 		button[4].setText(getButtonText(4));
 		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
+		button[button.length - 2].setText("Restart program");
+		button[button.length - 2].addActionListener(new MainGuiButtonListener());
 		button[button.length - 1].setText("Change Name");
 		button[button.length - 1].addActionListener(new MainGuiButtonListener());
 		setLabelBounds();
@@ -129,6 +131,7 @@ public class MainGui extends JFrame
 		}
 		
 		//Special buttons
+		button[button.length - 2].setBounds(400, 40, 140, 40);
 		button[button.length - 1].setBounds(260, 40, 120, 40);
 	}
 	
