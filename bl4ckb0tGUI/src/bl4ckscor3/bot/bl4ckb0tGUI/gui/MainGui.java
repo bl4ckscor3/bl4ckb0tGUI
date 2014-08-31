@@ -98,7 +98,7 @@ public class MainGui extends JFrame
 		for(JLabel l : label)
 		{
 			l.setBounds(30, posY, 110, 20);
-			posY = posY + 20;
+			posY += 20;
 		}
 		
 		//Special Labels
@@ -117,10 +117,10 @@ public class MainGui extends JFrame
 			for(JTextField t : txt)
 			{
 				t.setBounds(x, y, 110, 20);
-				x = x + 130;
+				x += 130;
 			}
 			
-			y = y + 20;
+			y += 20;
 		}
 		
 		//Special textfields
@@ -134,7 +134,7 @@ public class MainGui extends JFrame
 		for(JButton b : button)
 		{			
 			b.setBounds(600, posY, 150, 20);
-			posY = posY + 20;
+			posY += 20;
 			b.addActionListener(listener);
 		}
 		
