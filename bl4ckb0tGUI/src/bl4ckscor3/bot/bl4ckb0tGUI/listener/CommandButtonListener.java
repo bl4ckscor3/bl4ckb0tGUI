@@ -49,16 +49,8 @@ public class CommandButtonListener implements ActionListener
 				catch(IOException e){}
 				catch(IllegalArgumentException e)
 				{
-					warningGui = new WarningGui();
-					
-					warningGui.setTitle("WARNING");
-					warningGui.setFont(new Font("Arial", 0, 14));
-					warningGui.setSize(300, 150);
-					warningGui.setLocationRelativeTo(null);
-					warningGui.setResizable(false);
-					warningGui.setVisible(true);
-				}
-
+					warningGui = new WarningGui("WARNING", "You need to specify a target!");
+				}	
 				return;
 			}
 		}
