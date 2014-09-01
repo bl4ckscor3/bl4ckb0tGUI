@@ -3,7 +3,7 @@ package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 
-public class ChangeNick implements Command
+public class ChangeNick implements ICommand
 {
 	@Override
 	public void exe() 

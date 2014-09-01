@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Bukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Command;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
@@ -18,7 +18,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class CommandButtonListener implements ActionListener
 {
-	private LinkedList<Command> commands = new LinkedList();
+	private LinkedList<ICommand> commands = new LinkedList();
 	public static boolean enabled = true;
 
 	public CommandButtonListener()
@@ -35,7 +35,7 @@ public class CommandButtonListener implements ActionListener
 	{
 		if(enabled)
 		{
-			for(Command c : commands)
+			for(ICommand c : commands)
 			{
 				if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
 				{

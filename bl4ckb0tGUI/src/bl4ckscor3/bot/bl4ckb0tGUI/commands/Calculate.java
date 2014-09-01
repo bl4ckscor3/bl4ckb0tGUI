@@ -3,7 +3,7 @@ package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
-public class Calculate implements Command
+public class Calculate implements ICommand
 {
 	public void exe()
 	{

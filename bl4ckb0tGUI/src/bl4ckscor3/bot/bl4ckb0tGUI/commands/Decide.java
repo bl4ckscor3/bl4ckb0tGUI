@@ -6,7 +6,7 @@ import java.util.Random;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
-public class Decide implements Command
+public class Decide implements ICommand
 {
 	@Override
 	public void exe() throws IOException

@@ -10,7 +10,7 @@ import org.pircbotx.Colors;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
-public class CraftBukkit implements Command
+public class CraftBukkit implements ICommand
 {
 	@Override
 	public void exe() throws IOException
