@@ -68,7 +68,10 @@ public class NameGui extends JFrame
 		if(firstRun)
 			buttonStart.setText("Let's start!");
 		else
+		{
+			text.setText(Core.name);
 			buttonStart.setText("Change it!");
+		}
 		
 		buttonStart.setBounds(10, 80, 100, 20);
 		getRootPane().setDefaultButton(buttonStart);
