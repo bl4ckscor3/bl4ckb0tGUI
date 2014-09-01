@@ -27,12 +27,7 @@ public class ControlButtonListener implements ActionListener
 				@Override
 				public void run() 
 				{
-					try
-					{
-						Core.createBot();
-					}
-					catch(IOException e){}
-					catch(IrcException e){}
+					Core.createBot();
 				}
 			};
 
