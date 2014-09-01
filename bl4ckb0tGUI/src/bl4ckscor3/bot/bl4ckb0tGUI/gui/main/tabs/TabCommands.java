@@ -68,9 +68,4 @@ public class TabCommands extends JPanel
 		util.addNestedComponentArray(text, this);
 		util.addComponentArray(button, this);
 	}
-	
-	public JTextField[][] getTextFields()
-	{
-		return text;
-	}
 }
