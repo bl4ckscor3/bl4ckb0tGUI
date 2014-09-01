@@ -1,14 +1,14 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Calculate implements Command
 {
 	public void exe()
 	{
-		String[] sNumbers = Core.gui.text[1][1].getText().split(" ");
-		String operation = Core.gui.text[1][0].getText();
+		String[] sNumbers = TabCommands.text[1][1].getText().split(" ");
+		String operation = TabCommands.text[1][0].getText();
 		float[] numbers = new float[sNumbers.length];
 		
 		for(int i = 0; i < sNumbers.length; i++)
@@ -23,7 +23,7 @@ public class Calculate implements Command
 		else if(operation.equals("*") || operation.equals("x"))
 			multiply(numbers);
 		else if(operation.equals("/"))
-			Utilities.sendMessage(Core.gui.receiver, "I'm too dumb to divide :(");
+			Utilities.sendMessage(TabCommands.receiver, "I'm too dumb to divide :(");
 		else if(operation.equals("^"))
 			pow(numbers);
 		else if(operation.equals("%"))
@@ -31,9 +31,9 @@ public class Calculate implements Command
 		else if(operation.equals("!"))
 		{
 			if(sNumbers.length > 1)
-				Utilities.sendMessage(Core.gui.receiver, "You cannot calulate the factorial of more than one number at a time.");
+				Utilities.sendMessage(TabCommands.receiver, "You cannot calulate the factorial of more than one number at a time.");
 			else
-				Utilities.sendMessage(Core.gui.receiver, "The solution is: " + fact(Integer.parseInt(sNumbers[0])));
+				Utilities.sendMessage(TabCommands.receiver, "The solution is: " + fact(Integer.parseInt(sNumbers[0])));
 		}
 	}
 	
@@ -103,9 +103,9 @@ public class Calculate implements Command
 	private void checkForIntAndSend(float solution)
 	{
 		if(Float.toString(solution).endsWith(".0"))
-			Utilities.sendMessage(Core.gui.receiver, "The solution is: " + (int)solution);
+			Utilities.sendMessage(TabCommands.receiver, "The solution is: " + (int)solution);
 		else
-			Utilities.sendMessage(Core.gui.receiver, "The solution is: " + solution);
+			Utilities.sendMessage(TabCommands.receiver, "The solution is: " + solution);
 	}
 	
 	@Override

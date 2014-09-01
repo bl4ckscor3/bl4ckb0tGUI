@@ -7,7 +7,7 @@ import java.net.URL;
 
 import org.pircbotx.Colors;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class CraftBukkit implements Command
@@ -18,7 +18,7 @@ public class CraftBukkit implements Command
 		String buffer = "x";
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://dl.bukkit.org/downloads/craftbukkit/").openStream()));
 
-		switch(Core.gui.text[2][0].getText())
+		switch(TabCommands.text[2][0].getText())
 		{
 			case "rec":
 				for(int i = 0; i < 1301; i++)
@@ -50,7 +50,7 @@ public class CraftBukkit implements Command
 						String version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.DARK_GREEN + "The version of the latest recommended Craftbukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.DARK_GREEN + "The version of the latest recommended Craftbukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
@@ -86,7 +86,7 @@ public class CraftBukkit implements Command
 						String version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.PURPLE + "The version of the latest Craftbukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.PURPLE + "The version of the latest Craftbukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
@@ -122,14 +122,14 @@ public class CraftBukkit implements Command
 						String version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.RED + "The version of the latest Craftbukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.RED + "The version of the latest Craftbukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}
 				}
 				break;
 			default:	
-				System.out.println("Something went wrong: " + Core.gui.text[1][0].getText());
+				System.out.println("Something went wrong: " + TabCommands.text[1][0].getText());
 		}
 
 		reader.close();

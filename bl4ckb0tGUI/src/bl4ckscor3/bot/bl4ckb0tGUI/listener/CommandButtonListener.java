@@ -1,6 +1,5 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.listener;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -14,6 +13,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class CommandButtonListener implements ActionListener
@@ -39,19 +39,20 @@ public class CommandButtonListener implements ActionListener
 			{
 				if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
 				{
-					Core.gui.receiver = Core.dev ? "#bl4ckb0tTest" : Core.gui.text[Core.gui.text.length - 1][0].getText();
+					TabCommands.receiver = Core.dev ? "#bl4ckb0tTest" : TabCommands.text[TabCommands.text.length - 1][0].getText();
 
 					try
 					{
 						if(!c.getAlias().equals("changenick"))
-							Utilities.sendMessage(Core.gui.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
+							Utilities.sendMessage(TabCommands.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
 						
 						c.exe();
 					}
 					catch(IOException e){}
 					catch(IllegalArgumentException e)
 					{
-						new WarningGui("No target set!", "You need to specify a target!");
+						e.printStackTrace();
+//						new WarningGui("No target set!", "You need to specify a target!");
 					}	
 					return;
 				}

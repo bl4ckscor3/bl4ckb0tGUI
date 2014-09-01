@@ -7,7 +7,7 @@ import java.net.URL;
 
 import org.pircbotx.Colors;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Bukkit implements Command
@@ -16,7 +16,7 @@ public class Bukkit implements Command
 	public void exe() throws IOException
 	{
 		String buffer = "x";
-		String type = Core.gui.text[0][0].getText();
+		String type = TabCommands.text[0][0].getText();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://dl.bukkit.org/downloads/bukkit/").openStream()));
 		String[] link;
 		String newUrl;
@@ -52,7 +52,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.DARK_GREEN + "The version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.DARK_GREEN + "The version of the latest recommended Bukkit build is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 					}
 				}
@@ -84,7 +84,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.PURPLE + "The version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.PURPLE + "The version of the latest Bukkit Betabuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 					}
 				}
@@ -116,7 +116,7 @@ public class Bukkit implements Command
 						version = buffer.substring(12);
 
 						//Output
-						Utilities.sendMessage(Core.gui.receiver, Colors.RED + "The version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
+						Utilities.sendMessage(TabCommands.receiver, Colors.RED + "The version of the latest Bukkit Devbuild is " + Colors.BOLD + version + Colors.BOLD + ". Download it here: " + Colors.BOLD + "http://dl.bukkit.org" + link[1]);
 						versionReader.close();
 						break;
 					}

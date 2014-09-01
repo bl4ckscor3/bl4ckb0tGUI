@@ -9,8 +9,8 @@ import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.exception.IrcException;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.MainGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.NameGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.MainGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
 
 public class Core
@@ -70,6 +70,7 @@ public class Core
 		.addListener(new BotListener())
 		.setMessageDelay(500)
 		.buildConfiguration();
+		
 		bot = new PircBotX(config);
 
 		try
