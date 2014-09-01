@@ -39,6 +39,7 @@ public class Core
 			nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		else
 			nameGui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
 		nameGui.setResizable(false);
 		nameGui.setVisible(true);
 	}

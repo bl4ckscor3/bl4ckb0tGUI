@@ -2,6 +2,7 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -13,12 +14,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import org.pircbotx.exception.IrcException;
+
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
 
 public class NameGui extends JFrame
 {
-
 	public static boolean firstRun = true;
 	private JLabel label = new JLabel();
 	private JTextField text = new JTextField();
