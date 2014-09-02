@@ -22,6 +22,7 @@ public class TabCommands extends JPanel
 			new JLabel(), //-changenick
 			new JLabel(), //-decide
 			new JLabel(), //-draw
+			new JLabel(), //-forge
 			new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
@@ -31,6 +32,7 @@ public class TabCommands extends JPanel
 			new JTextField[]{new JTextField()}, //-cbukkit
 			new JTextField[]{new JTextField()}, //-changenick
 			new JTextField[]{new JTextField()}, //-decide
+			new JTextField[]{new JTextField(), new JTextField()}, //-forge
 			new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
@@ -41,8 +43,9 @@ public class TabCommands extends JPanel
 			new JButton(), //-changenick
 			new JButton(), //-decide
 			new JButton(), //-draw
+			new JButton(), //-forge
 		};
-	public static JComboBox dropDown = new JComboBox();
+	public static JComboBox<String> dropDown = new JComboBox<String>();
 
 	public TabCommands()
 	{
@@ -69,6 +72,9 @@ public class TabCommands extends JPanel
 		addDropDownTexts();
 		button[5].setText(Utilities.getButtonText(5, label));
 
+		label[6].setText("-forge");
+		button[6].setText(Utilities.getButtonText(6, label));
+		
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		util.setLabelBounds(label);
@@ -80,13 +86,11 @@ public class TabCommands extends JPanel
 		add(dropDown);
 	}
 
-
 	private void addDropDownTexts()
 	{
 		for(String s : Draw.drawings)
 		{
 			dropDown.addItem(s);
 		}
-		dropDown.addItem("tester");
 	}
 }

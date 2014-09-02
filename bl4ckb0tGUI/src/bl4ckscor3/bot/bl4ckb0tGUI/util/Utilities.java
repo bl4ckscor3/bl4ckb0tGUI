@@ -62,10 +62,13 @@ public class Utilities
 
 			for(JTextField t : txt)
 			{
+				if(y == 120)
+					y += 20;
+				
 				t.setBounds(x, y, 110, 20);
 				x += 130;
 			}
-
+			
 			y += 20;
 		}
 

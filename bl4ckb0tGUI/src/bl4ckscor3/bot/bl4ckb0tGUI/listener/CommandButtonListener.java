@@ -11,6 +11,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Forge;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
@@ -30,6 +31,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new CraftBukkit());
 		commands.add(new Decide());
 		commands.add(new Draw());
+		commands.add(new Forge());
 	}
 
 	@Override
