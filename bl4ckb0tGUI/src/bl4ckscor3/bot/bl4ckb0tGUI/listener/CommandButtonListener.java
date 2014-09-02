@@ -51,8 +51,7 @@ public class CommandButtonListener implements ActionListener
 					catch(IOException e){}
 					catch(IllegalArgumentException e)
 					{
-						e.printStackTrace();
-//						new WarningGui("No target set!", "You need to specify a target!");
+						new WarningGui("No target set!", "You need to specify a target!");
 					}	
 					return;
 				}

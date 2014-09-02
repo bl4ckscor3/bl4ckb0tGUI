@@ -23,38 +23,15 @@ public class NameGui extends JFrame
 {
 	public static boolean firstRun = true;
 	private JLabel label = new JLabel();
-	private JTextField text = new JTextField();
-	private JButton buttonStart;
-	private JButton buttonStop = new JButton();
+	public JTextField text = new JTextField();
+	public JButton buttonStart;
+	public JButton buttonStop = new JButton();
 	private String textText = "Please insert your username below.";
 	private Container cp = getContentPane();
-	Action accept = new AbstractAction("Accept")
+	private Action accept = new AbstractAction("Accept")
 	{
 		@Override
-		public void actionPerformed(ActionEvent event)
-		{
-			ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
-			Runnable r = new Runnable()
-			{
-				@Override
-				public void run() 
-				{
-					firstRun = false;
-					Core.createBot();
-				}
-			};
-			
-			if(!text.getText().equals(""))
-				Core.name = text.getText();
-
-			Core.nameGui.dispose();
-			
-			if(firstRun)
-			{
-				Core.setupGui();
-				worker.schedule(r, 10, TimeUnit.MILLISECONDS);
-			}
-		}
+		public void actionPerformed(ActionEvent event){}//this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
 
 	public NameGui()
@@ -74,10 +51,11 @@ public class NameGui extends JFrame
 		}
 		
 		buttonStart.setBounds(10, 80, 100, 20);
+		buttonStart.addActionListener(new NameGuiButtonListener(this));
 		getRootPane().setDefaultButton(buttonStart);
 		buttonStop.setText("I changed my mind.");
 		buttonStop.setBounds(130, 80, 145 , 20);
-		buttonStop.addActionListener(new NameGuiButtonListener());
+		buttonStop.addActionListener(new NameGuiButtonListener(this));
 		cp.add(label);
 		cp.add(text);
 		cp.add(buttonStart);

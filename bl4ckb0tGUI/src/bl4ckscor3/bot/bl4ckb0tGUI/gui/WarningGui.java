@@ -21,26 +21,15 @@ public class WarningGui extends JFrame
 	private Action accept = new AbstractAction("Accept")
 	{
 		@Override
-		public void actionPerformed(ActionEvent event)
-		{
-			ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
-			Runnable r = new Runnable()
-			{
-				@Override
-				public void run() 
-				{
-					dispose();
-				}
-			};
-		}
+		public void actionPerformed(ActionEvent event){}//this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
-	
+
 	public WarningGui(String title, String text)
 	{
 		Container cp = getContentPane();
 		JLabel label = new JLabel();
 		JButton button = new JButton(accept);
-		
+
 		cp.setLayout(null);
 		setTitle(title);
 		setFont(new Font("Arial", 0, 14));
@@ -55,7 +44,7 @@ public class WarningGui extends JFrame
 		button.setBounds(95, 60, 100, 20);
 		button.addActionListener(new WarningGuiButtonListener(this));
 		getRootPane().setDefaultButton(button);
-		
+
 		add(label);
 		add(button);
 	}
