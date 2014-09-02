@@ -1,10 +1,12 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.document.JTextFieldLimited;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
@@ -19,6 +21,7 @@ public class TabCommands extends JPanel
 			new JLabel(), //-cbukkit
 			new JLabel(), //-changenick
 			new JLabel(), //-decide
+			new JLabel(), //-draw
 			new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
@@ -35,14 +38,16 @@ public class TabCommands extends JPanel
 			new JButton(), //-bukkit
 			new JButton(), //-calc
 			new JButton(), //-cbukkit
-			new JButton(), //-decide
 			new JButton(), //-changenick
+			new JButton(), //-decide
+			new JButton(), //-draw
 		};
-	
+	public static JComboBox dropDown = new JComboBox();
+
 	public TabCommands()
 	{
 		setLayout(null);
-		
+
 		label[0].setText("-bukkit");
 		button[0].setText(Utilities.getButtonText(0, label));
 
@@ -59,6 +64,11 @@ public class TabCommands extends JPanel
 		label[4].setText("-decide");
 		button[4].setText(Utilities.getButtonText(4, label));
 
+		label[5].setText("-draw");
+		dropDown.setBounds(130, 120, 110, 20);
+		addDropDownTexts();
+		button[5].setText(Utilities.getButtonText(5, label));
+
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		util.setLabelBounds(label);
@@ -67,5 +77,16 @@ public class TabCommands extends JPanel
 		util.addComponentArray(label, this);
 		util.addNestedComponentArray(text, this);
 		util.addComponentArray(button, this);
+		add(dropDown);
+	}
+
+
+	private void addDropDownTexts()
+	{
+		for(String s : Draw.drawings)
+		{
+			dropDown.addItem(s);
+		}
+		dropDown.addItem("tester");
 	}
 }

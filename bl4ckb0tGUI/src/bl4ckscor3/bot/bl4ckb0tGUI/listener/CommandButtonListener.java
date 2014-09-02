@@ -8,9 +8,10 @@ import java.util.LinkedList;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Bukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
@@ -28,6 +29,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new ChangeNick());
 		commands.add(new CraftBukkit());
 		commands.add(new Decide());
+		commands.add(new Draw());
 	}
 
 	@Override
