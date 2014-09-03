@@ -84,15 +84,18 @@ public class Utilities
 		text[text.length - 1][0].setBounds(310, 705, 150, 20);
 	}
 
-	public void setButtonBounds(JButton[] button)
+	public void setButtonProperties(JButton[] button, JLabel[] label)
 	{
 		int posY = 20;
-
+		int i = 0;
+		
 		for(JButton b : button)
 		{			
 			b.setBounds(600, posY, 150, 20);
 			posY += 20;
+			b.setText(getButtonText(i, label));
 			b.addActionListener(new CommandButtonListener());
+			i++;
 		}
 	}		
 
