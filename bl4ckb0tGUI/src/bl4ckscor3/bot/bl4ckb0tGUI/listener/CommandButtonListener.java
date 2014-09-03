@@ -13,6 +13,9 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Forge;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Join;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Kick;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leave;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
@@ -32,6 +35,9 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new Decide());
 		commands.add(new Draw());
 		commands.add(new Forge());
+		commands.add(new Join());
+		commands.add(new Kick());
+		commands.add(new Leave());
 	}
 
 	@Override

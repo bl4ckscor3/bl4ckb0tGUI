@@ -12,26 +12,37 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.pircbotx.Channel;
+
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
+
+import com.google.common.collect.ImmutableSortedSet;
 
 public class Utilities
 {
+	private static String[] validUsers =
+		{
+		"bl4ckscor3",
+		"akino_germany"
+		};
+
 	public static String[] addAutoJoinChans() throws MalformedURLException, IOException
 	{
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("https://www.dropbox.com/s/tishdl84z1wmcgs/bl4ckb0t%20chans.txt?dl=1").openStream()));
-	
+
 		if(Core.bot.getNick().equals("bl4ckb0t"))
 			return reader.readLine().split(",");
 		else
 			return new String[]{"#bl4ckb0tTest"};
 	}
-	
+
 	public static void sendMessage(String target, String message)
 	{
 		Core.bot.sendIRC().message(target, message);
 	}
-	
+
 	public static String getButtonText(int labelArrayPosition, JLabel[] label)
 	{
 		return "Issue '" + label[labelArrayPosition].getText() + "'";
@@ -62,13 +73,10 @@ public class Utilities
 
 			for(JTextField t : txt)
 			{
-				if(y == 120)
-					y += 20;
-				
 				t.setBounds(x, y, 110, 20);
 				x += 130;
 			}
-			
+
 			y += 20;
 		}
 
@@ -101,5 +109,58 @@ public class Utilities
 			for(Component c : comp)
 				panel.add(c);
 		}
+	}
+
+	public static boolean hasJoinedChannel(String chan)
+	{
+		String[] chans = getJoinedChannels();
+
+		for(String s : chans)
+		{
+			if(s != null)
+			{
+				if(s.equalsIgnoreCase(chan))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	public static String[] getJoinedChannels()
+	{
+		ImmutableSortedSet<Channel> list = Core.bot.getUserBot().getChannels();
+		Object[] x = list.toArray();
+		String[] chans = new String[x.length];
+		int i = 0;
+
+		for(Object o : x)
+		{
+			chans[i] = o.toString().split(",")[0].split("=")[1];
+			i++;
+		}
+
+		return chans;
+	}
+
+	public static void sorry()
+	{
+		sendMessage(TabCommands.receiver, "Sorry, only certain people are allowed to control me.");
+	}
+
+	public static boolean validUser()
+	{	
+		for(String s : validUsers)
+		{
+			if(Core.name.equalsIgnoreCase(s))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static String[] getValidUsers()
+	{
+		return validUsers;
 	}
 }
