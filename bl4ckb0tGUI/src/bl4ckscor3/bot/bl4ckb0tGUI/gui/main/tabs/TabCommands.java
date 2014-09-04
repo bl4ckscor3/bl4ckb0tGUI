@@ -14,49 +14,49 @@ public class TabCommands extends JPanel
 	private Utilities util = new Utilities();
 	private JLabel[] label = 
 		{
-			new JLabel(), //-bukkit
-			new JLabel(), //-calc
-			new JLabel(), //-cbukkit
-			new JLabel(), //-changenick
-			new JLabel(), //-decide
-			new JLabel(), //-draw
-			new JLabel(), //-forge
-			new JLabel(), //-join
-			new JLabel(), //-kick
-			new JLabel(), //-leave
-			new JLabel()  //chan/user to send to
+		 new JLabel(), //-bukkit
+		 new JLabel(), //-calc
+		 new JLabel(), //-cbukkit
+		 new JLabel(), //-changenick
+		 new JLabel(), //-decide
+		 new JLabel(), //-draw
+		 new JLabel(), //-forge
+		 new JLabel(), //-join
+		 new JLabel(), //-kick
+		 new JLabel(), //-leave
+		 new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
 		{
-		new JTextField[]{new JTextField()}, //-bukkit
-		new JTextField[]{new JTextField(), new JTextField()}, //-calc
-		new JTextField[]{new JTextField()}, //-cbukkit
-		new JTextField[]{new JTextField()}, //-changenick
-		new JTextField[]{new JTextField()}, //-decide
-		new JTextField[]{}, //-draw (placeholder for the setBounds() algorythm to work
-		new JTextField[]{new JTextField(), new JTextField()}, //-forge
-		new JTextField[]{new JTextField()}, //-join
-		new JTextField[]{new JTextField(), new JTextField()}, //-kick
-		new JTextField[]{new JTextField()}, //-leave
-		new JTextField[]{new JTextField()}  //chan/user to send to
+		 new JTextField[]{new JTextField()}, //-bukkit
+		 new JTextField[]{new JTextField()}, //-calc
+		 new JTextField[]{new JTextField()}, //-cbukkit
+		 new JTextField[]{new JTextField()}, //-changenick
+		 new JTextField[]{new JTextField()}, //-decide
+		 new JTextField[]{}, //-draw (placeholder for the setBounds() algorythm to work
+		 new JTextField[]{new JTextField(), new JTextField()}, //-forge
+		 new JTextField[]{new JTextField()}, //-join
+		 new JTextField[]{new JTextField(), new JTextField()}, //-kick
+		 new JTextField[]{new JTextField()}, //-leave
+		 new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
 		{
-			new JButton(), //-bukkit
-			new JButton(), //-calc
-			new JButton(), //-cbukkit
-			new JButton(), //-changenick
-			new JButton(), //-decide
-			new JButton(), //-draw
-			new JButton(), //-forge
-			new JButton(), //-join
-			new JButton(), //-kick
-			new JButton(), //-leave
+		 new JButton(), //-bukkit
+		 new JButton(), //-calc
+		 new JButton(), //-cbukkit
+		 new JButton(), //-changenick
+		 new JButton(), //-decide
+		 new JButton(), //-draw
+		 new JButton(), //-forge
+		 new JButton(), //-join
+		 new JButton(), //-kick
+		 new JButton(), //-leave
 		};
 	public static JComboBox[] dropDown = 
 		{
-		new JComboBox(), //-calc
-		new JComboBox(), //-draw
+		 new JComboBox(), //-calc
+		 new JComboBox(), //-draw
 		};
 
 	public TabCommands()
