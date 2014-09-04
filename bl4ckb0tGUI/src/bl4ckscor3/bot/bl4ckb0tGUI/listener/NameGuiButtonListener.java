@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.NameGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 
 public class NameGuiButtonListener implements ActionListener
 {
@@ -29,7 +30,7 @@ public class NameGuiButtonListener implements ActionListener
 				@Override
 				public void run() 
 				{
-					nameGui.firstRun = false;
+					TabControl.firstRun = false;
 					Core.createBot();
 				}
 			};
@@ -39,7 +40,7 @@ public class NameGuiButtonListener implements ActionListener
 
 			Core.nameGui.dispose();
 
-			if(nameGui.firstRun)
+			if(TabControl.firstRun)
 			{
 				Core.setupGui();
 				worker.schedule(r, 10, TimeUnit.MILLISECONDS);
@@ -47,7 +48,7 @@ public class NameGuiButtonListener implements ActionListener
 		}
 		else if(event.getActionCommand().equals(nameGui.buttonStop.getText()))
 		{
-			if(NameGui.firstRun)
+			if(TabControl.firstRun)
 				System.exit(0);
 			else
 				Core.nameGui.dispose();

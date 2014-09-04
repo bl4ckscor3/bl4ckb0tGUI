@@ -8,6 +8,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class TabControl extends JPanel
 {
+	public static boolean firstRun = true;
 	private Utilities util = new Utilities();
 	public static JButton[] controlButton =
 		{
@@ -22,14 +23,17 @@ public class TabControl extends JPanel
 
 		controlButton[0].setText("Change Name");
 		controlButton[0].setBounds(190, 40, 120, 40); //change name
-		controlButton[0].addActionListener(new ControlButtonListener());
 		controlButton[1].setText("Restart program");
 		controlButton[1].setBounds(320, 40, 140, 40); //reboot
-		controlButton[1].addActionListener(new ControlButtonListener());
 		controlButton[2].setText("Disable bot");
 		controlButton[2].setBounds(470, 40, 120, 40); //disabling/enabling the bot
-		controlButton[2].addActionListener(new ControlButtonListener());
 
+		for(JButton b : controlButton)
+		{
+			if(TabControl.firstRun)
+				b.addActionListener(new ControlButtonListener());
+		}
+		
 		util.addComponentArray(controlButton, this);
 	}
 }

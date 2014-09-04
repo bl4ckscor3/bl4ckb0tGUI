@@ -11,6 +11,7 @@ import org.pircbotx.exception.IrcException;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.NameGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.MainGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
 
 public class Core
@@ -35,7 +36,7 @@ public class Core
 		nameGui.setSize(300, 150);
 		nameGui.setLocationRelativeTo(null);
 		
-		if(NameGui.firstRun)
+		if(TabControl.firstRun)
 			nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		else
 			nameGui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

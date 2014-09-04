@@ -2,10 +2,6 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -14,14 +10,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import org.pircbotx.exception.IrcException;
-
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
 
 public class NameGui extends JFrame
 {
-	public static boolean firstRun = true;
 	private JLabel label = new JLabel();
 	public JTextField text = new JTextField();
 	public JButton buttonStart;
@@ -42,7 +36,7 @@ public class NameGui extends JFrame
 		label.setText(textText);
 		text.setBounds(42, 40, 200, 20);
 		
-		if(firstRun)
+		if(TabControl.firstRun)
 			buttonStart.setText("Let's start!");
 		else
 		{

@@ -19,6 +19,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
 
 import com.google.common.collect.ImmutableSortedSet;
@@ -100,7 +101,10 @@ public class Utilities
 			b.setBounds(600, posY, 150, 20);
 			posY += 20;
 			b.setText(getButtonText(i, label));
-			b.addActionListener(new CommandButtonListener());
+			
+			if(TabControl.firstRun)
+				b.addActionListener(new CommandButtonListener());
+			
 			i++;
 		}
 	}		
