@@ -16,6 +16,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Join;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Kick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leave;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leet;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
@@ -38,6 +39,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new Join());
 		commands.add(new Kick());
 		commands.add(new Leave());
+		commands.add(new Leet());
 	}
 
 	@Override

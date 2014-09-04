@@ -24,6 +24,7 @@ public class TabCommands extends JPanel
 		 new JLabel(), //-join
 		 new JLabel(), //-kick
 		 new JLabel(), //-leave
+		 new JLabel(), //-leet
 		 new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
@@ -38,6 +39,7 @@ public class TabCommands extends JPanel
 		 new JTextField[]{new JTextField()}, //-join
 		 new JTextField[]{new JTextField(), new JTextField()}, //-kick
 		 new JTextField[]{new JTextField()}, //-leave
+		 new JTextField[]{new JTextField()}, //-leet
 		 new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
@@ -52,6 +54,7 @@ public class TabCommands extends JPanel
 		 new JButton(), //-join
 		 new JButton(), //-kick
 		 new JButton(), //-leave
+		 new JButton(), //-leet
 		};
 	public static JComboBox[] dropDown = 
 		{
@@ -75,6 +78,7 @@ public class TabCommands extends JPanel
 		label[7].setText("-join");
 		label[8].setText("-kick");
 		label[9].setText("-leave");
+		label[10].setText("-leet");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		util.setLabelBounds(label);
