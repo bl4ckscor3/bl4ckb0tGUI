@@ -7,8 +7,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class ControlButtonListener implements ActionListener
 {
@@ -46,6 +47,23 @@ public class ControlButtonListener implements ActionListener
 				CommandButtonListener.enabled = true;
 				TabControl.controlButton[2].setText("Disable bot");
 			}
+		}
+		else if(event.getActionCommand().equals(TabControl.controlButton[3].getText())) //list channels
+		{
+			String[] chans = Utilities.getJoinedChannels();
+			StringBuilder builder = new StringBuilder();
+
+			TabCommands.receiver = Core.dev ? "#bl4ckb0tTest" : TabCommands.text[TabCommands.text.length - 1][0].getText();
+			
+			for(String s : chans)
+			{
+				if(s != null)
+					builder.append(s + " | ");
+			}
+
+			builder.deleteCharAt(builder.length() - 1);
+			builder.deleteCharAt(builder.length() - 1);
+			Utilities.sendMessage(TabCommands.receiver, "I joined these channels: " + builder.toString());
 		}
 	}
 }
