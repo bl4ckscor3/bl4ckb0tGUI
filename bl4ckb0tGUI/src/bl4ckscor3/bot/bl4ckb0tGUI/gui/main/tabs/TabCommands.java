@@ -6,8 +6,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
-import bl4ckscor3.bot.bl4ckb0tGUI.document.JTextFieldLimited;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class TabCommands extends JPanel
@@ -30,17 +28,17 @@ public class TabCommands extends JPanel
 		};
 	public static JTextField[][] text = 
 		{
-			new JTextField[]{new JTextField()}, //-bukkit
-			new JTextField[]{new JTextField(), new JTextField()}, //-calc
-			new JTextField[]{new JTextField()}, //-cbukkit
-			new JTextField[]{new JTextField()}, //-changenick
-			new JTextField[]{new JTextField()}, //-decide
-			new JTextField[]{}, //-draw (placeholder for the setBounds() algorythm to work
-			new JTextField[]{new JTextField(), new JTextField()}, //-forge
-			new JTextField[]{new JTextField()}, //-join
-			new JTextField[]{new JTextField(), new JTextField()}, //-kick
-			new JTextField[]{new JTextField()}, //-leave
-			new JTextField[]{new JTextField()}  //chan/user to send to
+		new JTextField[]{new JTextField()}, //-bukkit
+		new JTextField[]{new JTextField(), new JTextField()}, //-calc
+		new JTextField[]{new JTextField()}, //-cbukkit
+		new JTextField[]{new JTextField()}, //-changenick
+		new JTextField[]{new JTextField()}, //-decide
+		new JTextField[]{}, //-draw (placeholder for the setBounds() algorythm to work
+		new JTextField[]{new JTextField(), new JTextField()}, //-forge
+		new JTextField[]{new JTextField()}, //-join
+		new JTextField[]{new JTextField(), new JTextField()}, //-kick
+		new JTextField[]{new JTextField()}, //-leave
+		new JTextField[]{new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
 		{
