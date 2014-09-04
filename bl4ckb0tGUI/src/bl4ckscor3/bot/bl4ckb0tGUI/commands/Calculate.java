@@ -5,17 +5,28 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Calculate implements ICommand
 {
+	public static String[] operations =
+		{
+			"+",
+			"-",
+			"*",
+			"/",
+			"^",
+			"%",
+			"!"
+		};
+
 	public void exe()
 	{
-		String[] sNumbers = TabCommands.text[1][1].getText().split(" ");
-		String operation = TabCommands.text[1][0].getText();
+		String[] sNumbers = TabCommands.text[1][0].getText().split(" ");
+		String operation = (String)TabCommands.dropDown[0].getSelectedItem();
 		float[] numbers = new float[sNumbers.length];
-		
+
 		for(int i = 0; i < sNumbers.length; i++)
 		{
 			numbers[i] = Float.parseFloat(sNumbers[i]);
 		}
-		
+
 		if(operation.equals("+"))
 			add(numbers);
 		else if(operation.equals("-"))
@@ -36,23 +47,23 @@ public class Calculate implements ICommand
 				Utilities.sendMessage(TabCommands.receiver, "The solution is: " + fact(Integer.parseInt(sNumbers[0])));
 		}
 	}
-	
+
 	private void add(float[] numbers)
 	{
 		float solution = numbers[0];
-		
+
 		for(int i = 1; i < numbers.length; i++)
 		{
 			solution += numbers[i];
 		}		
-		
+
 		checkForIntAndSend(solution);
 	}
-	
+
 	private void subtract(float[] numbers)
 	{
 		float solution = numbers[0];
-		
+
 		for(int i = 1; i < numbers.length; i++)
 		{
 			solution -= numbers[i];
@@ -60,38 +71,38 @@ public class Calculate implements ICommand
 
 		checkForIntAndSend(solution);
 	}
-	
+
 	private void multiply(float[] numbers)
 	{
 		float solution = 1;
-		
+
 		for(int i = 0; i < numbers.length; i++)
 		{
 			solution *= numbers[i];
 		}
-		
+
 		checkForIntAndSend(solution);
 	}
-	
+
 	private void pow(float[] numbers)
 	{
 		double solution = Math.pow(numbers[0], numbers[1]);
-		
+
 		checkForIntAndSend((float)solution);
 	}
-	
+
 	private void modulo(float[] numbers) 
 	{
 		float solution = numbers[0];
-		
+
 		for(int i = 1; i < numbers.length; i++)
 		{
 			solution %= numbers[i];
 		}
-		
+
 		checkForIntAndSend(solution);
 	}
-	
+
 	private int fact(int i)
 	{
 		if(i == 1)
@@ -99,7 +110,7 @@ public class Calculate implements ICommand
 		else
 			return i * fact(i - 1);
 	}
-	
+
 	private void checkForIntAndSend(float solution)
 	{
 		if(Float.toString(solution).endsWith(".0"))
@@ -107,7 +118,7 @@ public class Calculate implements ICommand
 		else
 			Utilities.sendMessage(TabCommands.receiver, "The solution is: " + solution);
 	}
-	
+
 	@Override
 	public String getAlias()
 	{

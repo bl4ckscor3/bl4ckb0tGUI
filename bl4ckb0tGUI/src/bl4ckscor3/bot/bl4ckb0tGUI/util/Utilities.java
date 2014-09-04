@@ -8,12 +8,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import org.pircbotx.Channel;
 
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
@@ -73,6 +76,9 @@ public class Utilities
 
 			for(JTextField t : txt)
 			{
+				if(x == 130 && y == 40) //needed so that the jtextfield at this position doesn't override the dropdown menu
+					x = 260;
+				
 				t.setBounds(x, y, 110, 20);
 				x += 130;
 			}
@@ -99,6 +105,19 @@ public class Utilities
 		}
 	}		
 
+	public void addDropDownTexts(JComboBox[] dropDown)
+	{
+		for(String s : Calculate.operations)
+		{
+			dropDown[0].addItem(s);
+		}
+		
+		for(String s : Draw.drawings)
+		{
+			dropDown[1].addItem(s);
+		}
+	}
+	
 	public void addComponentArray(Component[] component, JPanel panel)
 	{
 		for(Component c : component)

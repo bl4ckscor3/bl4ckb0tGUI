@@ -30,7 +30,7 @@ public class Draw implements ICommand
 	@Override
 	public void exe()
 	{
-		switch((String)TabCommands.dropDown.getSelectedItem())
+		switch((String)TabCommands.dropDown[1].getSelectedItem())
 		{
 			case "smiley":
 				smiley();

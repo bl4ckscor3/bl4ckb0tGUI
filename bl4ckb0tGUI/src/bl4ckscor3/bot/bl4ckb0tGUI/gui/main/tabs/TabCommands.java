@@ -55,7 +55,11 @@ public class TabCommands extends JPanel
 			new JButton(), //-kick
 			new JButton(), //-leave
 		};
-	public static JComboBox<String> dropDown = new JComboBox<String>();
+	public static JComboBox[] dropDown = 
+		{
+		new JComboBox(), //-calc
+		new JComboBox(), //-draw
+		};
 
 	public TabCommands()
 	{
@@ -63,13 +67,12 @@ public class TabCommands extends JPanel
 
 		label[0].setText("-bukkit");
 		label[1].setText("-calc");
-		text[1][0].setDocument(new JTextFieldLimited(1, "+", "-", "*", "/", "^", "%", "!"));
+		dropDown[0].setBounds(130, 40, 110, 20);
 		label[2].setText("-cbukkit");
 		label[3].setText("-changenick");
 		label[4].setText("-decide");
 		label[5].setText("-draw");
-		dropDown.setBounds(130, 120, 110, 20);
-		addDropDownTexts();
+		dropDown[1].setBounds(130, 120, 110, 20);
 		label[6].setText("-forge");
 		label[7].setText("-join");
 		label[8].setText("-kick");
@@ -79,17 +82,10 @@ public class TabCommands extends JPanel
 		util.setLabelBounds(label);
 		util.setTextBounds(text);
 		util.setButtonProperties(button, label);
+		util.addDropDownTexts(dropDown);
 		util.addComponentArray(label, this);
 		util.addNestedComponentArray(text, this);
 		util.addComponentArray(button, this);
-		add(dropDown);
-	}
-
-	private void addDropDownTexts()
-	{
-		for(String s : Draw.drawings)
-		{
-			dropDown.addItem(s);
-		}
+		util.addComponentArray(dropDown, this);
 	}
 }
