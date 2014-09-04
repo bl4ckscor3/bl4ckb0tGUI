@@ -11,28 +11,24 @@ public class TabControl extends JPanel
 	private Utilities util = new Utilities();
 	public static JButton[] controlButton =
 		{
-			new JButton(), //disabling the bot
-			new JButton(), //enabling the bot
-			new JButton(), //reboot
-			new JButton(), //change name
+		 new JButton(), //change name
+		 new JButton(), //reboot
+		 new JButton(), //disabling/enabling the bot
 		};
-	
+
 	public TabControl()
 	{
 		setLayout(null);
-		
-		controlButton[0].setText("Disable bot");
-		controlButton[0].setBounds(560, 40, 120, 40); //disabling the bot
+
+		controlButton[0].setText("Change Name");
+		controlButton[0].setBounds(190, 40, 120, 40); //change name
 		controlButton[0].addActionListener(new ControlButtonListener());
-		controlButton[1].setText("Enable bot");
-		controlButton[1].setBounds(420, 40, 120, 40); //enabling the bot
+		controlButton[1].setText("Restart program");
+		controlButton[1].setBounds(320, 40, 140, 40); //reboot
 		controlButton[1].addActionListener(new ControlButtonListener());
-		controlButton[2].setText("Restart program");
-		controlButton[2].setBounds(260, 40, 140, 40); //reboot
+		controlButton[2].setText("Disable bot");
+		controlButton[2].setBounds(470, 40, 120, 40); //disabling/enabling the bot
 		controlButton[2].addActionListener(new ControlButtonListener());
-		controlButton[3].setText("Change Name");
-		controlButton[3].setBounds(120, 40, 120, 40); //change name
-		controlButton[3].addActionListener(new ControlButtonListener());
 
 		util.addComponentArray(controlButton, this);
 	}

@@ -14,10 +14,10 @@ public class ControlButtonListener implements ActionListener
 {
 	@Override
 	public void actionPerformed(ActionEvent event)
-	{	
-		if(event.getActionCommand().equals(TabControl.controlButton[3].getText())) //change name
+	{
+		if(event.getActionCommand().equals(TabControl.controlButton[0].getText())) //change name
 			Core.setupNameGui();
-		else if(event.getActionCommand().equals(TabControl.controlButton[2].getText())) //reboot
+		else if(event.getActionCommand().equals(TabControl.controlButton[1].getText())) //reboot
 		{
 			ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
 			Runnable r = new Runnable()
@@ -34,19 +34,18 @@ public class ControlButtonListener implements ActionListener
 			Core.setupGui();
 			worker.schedule(r, 10, TimeUnit.MILLISECONDS);
 		}
-		else if(event.getActionCommand().equals(TabControl.controlButton[1].getText())) //enable
-		{
-			if(!CommandButtonListener.enabled)
-				CommandButtonListener.enabled = true;
-			else
-				new WarningGui("Already enabled!", "I am already enabled >:D");
-		}
-		else if(event.getActionCommand().equals(TabControl.controlButton[0].getText())) //disable
+		else if(event.getActionCommand().equals(TabControl.controlButton[2].getText())) //disabling/enabling the bot
 		{
 			if(CommandButtonListener.enabled)
+			{
 				CommandButtonListener.enabled = false;
+				TabControl.controlButton[2].setText("Enable bot");
+			}
 			else
-				new WarningGui("Already disabled!", "I am already disabled :(");
+			{
+				CommandButtonListener.enabled = true;
+				TabControl.controlButton[2].setText("Disable bot");
+			}
 		}
 	}
 }
