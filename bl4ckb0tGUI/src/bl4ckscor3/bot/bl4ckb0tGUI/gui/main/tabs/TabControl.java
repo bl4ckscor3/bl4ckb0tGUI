@@ -16,6 +16,7 @@ public class TabControl extends JPanel
 		 new JButton(), //reboot
 		 new JButton(), //disabling/enabling the bot
 		 new JButton(), //list channels
+		 new JButton(), //source
 		};
 
 	public TabControl()
@@ -23,13 +24,15 @@ public class TabControl extends JPanel
 		setLayout(null);
 
 		controlButton[0].setText("Change Name");
-		controlButton[0].setBounds(120, 40, 120, 40); //change name
+		controlButton[0].setBounds(60, 40, 120, 40); //change name
 		controlButton[1].setText("Restart program");
-		controlButton[1].setBounds(260, 40, 140, 40); //reboot
+		controlButton[1].setBounds(200, 40, 140, 40); //reboot
 		controlButton[2].setText("Disable bot");
-		controlButton[2].setBounds(420, 40, 120, 40); //disabling/enabling the bot
+		controlButton[2].setBounds(360, 40, 120, 40); //disabling/enabling the bot
 		controlButton[3].setText("List Channels");
-		controlButton[3].setBounds(560, 40, 120, 40); //list channels
+		controlButton[3].setBounds(500, 40, 120, 40); //list channels
+		controlButton[4].setText("Source");
+		controlButton[4].setBounds(640, 40, 110, 40); //source
 
 		for(JButton b : controlButton)
 		{
