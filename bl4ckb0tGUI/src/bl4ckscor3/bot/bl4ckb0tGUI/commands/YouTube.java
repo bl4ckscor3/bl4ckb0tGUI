@@ -8,7 +8,7 @@ public class YouTube implements ICommand
 	@Override
 	public void exe()
 	{
-		Utilities.sendMessage(TabCommands.receiver, "http://www.youtube.com/" + TabCommands.text[21][0]);
+		Utilities.sendMessage(TabCommands.receiver, "http://www.youtube.com/" + TabCommands.text[21][0].getText());
 	}
 
 	@Override
