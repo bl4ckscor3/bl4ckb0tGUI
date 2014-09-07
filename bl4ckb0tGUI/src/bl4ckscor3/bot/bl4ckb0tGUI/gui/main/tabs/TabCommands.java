@@ -60,7 +60,7 @@ public class TabCommands extends JPanel
 		 {new JTextField()}, //-tw
 		 {new JTextField()}, //-vowels
 		 {new JTextField()}, //-w
-		 {new JTextField()}, //-xcolor
+		 {}, //-xcolor
 		 {new JTextField()}, //-yt
 		 {new JTextField()}  //chan/user to send to
 		};
