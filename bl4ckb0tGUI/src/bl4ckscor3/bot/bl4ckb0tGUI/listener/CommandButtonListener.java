@@ -39,6 +39,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new Vowels());
 		commands.add(new Weather());
 		commands.add(new XColor());
+		commands.add(new YouTube());
 	}
 
 	@Override

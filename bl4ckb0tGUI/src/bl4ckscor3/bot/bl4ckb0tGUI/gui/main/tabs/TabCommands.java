@@ -35,6 +35,7 @@ public class TabCommands extends JPanel
 		 new JLabel(), //-vowels
 		 new JLabel(), //-w
 		 new JLabel(), //-xcolor
+		 new JLabel(), //-yt
 		 new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
@@ -60,6 +61,7 @@ public class TabCommands extends JPanel
 		 {new JTextField()}, //-vowels
 		 {new JTextField()}, //-w
 		 {new JTextField()}, //-xcolor
+		 {new JTextField()}, //-yt
 		 {new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
@@ -85,6 +87,7 @@ public class TabCommands extends JPanel
 		 new JButton(), //-vowels
 		 new JButton(), //-w
 		 new JButton(), //-xcolor
+		 new JButton()  //-yt
 		};
 	public static JComboBox[] dropDown = 
 		{
@@ -121,6 +124,7 @@ public class TabCommands extends JPanel
 		label[18].setText("-vowels");
 		label[19].setText("-w");
 		label[20].setText("-xcolor");
+		label[21].setText("-yt");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		util.setLabelBounds(label);
