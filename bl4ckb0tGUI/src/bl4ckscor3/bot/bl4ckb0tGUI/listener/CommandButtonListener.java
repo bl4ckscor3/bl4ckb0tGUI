@@ -37,6 +37,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new Twitch());
 		commands.add(new Twitter());
 		commands.add(new Vowels());
+		commands.add(new Weather());
 	}
 
 	@Override
