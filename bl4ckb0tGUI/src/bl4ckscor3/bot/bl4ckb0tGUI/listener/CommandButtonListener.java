@@ -18,6 +18,8 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Kick;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leave;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leet;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.LongURL;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.RandomLetter;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.RandomNumber;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
@@ -42,6 +44,8 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new Leave());
 		commands.add(new Leet());
 		commands.add(new LongURL());
+		commands.add(new RandomLetter());
+		commands.add(new RandomNumber());
 	}
 
 	@Override
