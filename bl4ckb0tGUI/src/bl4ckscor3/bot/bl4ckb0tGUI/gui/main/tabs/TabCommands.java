@@ -28,6 +28,7 @@ public class TabCommands extends JPanel
 		 new JLabel(), //-longurl
 		 new JLabel(), //-letter
 		 new JLabel(), //-number
+		 new JLabel(), //-scramble
 		 new JLabel()  //chan/user to send to
 		};
 	public static JTextField[][] text = 
@@ -37,7 +38,7 @@ public class TabCommands extends JPanel
 		 {new JTextField()}, //-cbukkit
 		 {new JTextField()}, //-changenick
 		 {new JTextField()}, //-decide
-		 {}, //-draw (placeholder for the setBounds() algorythm to work
+		 {}, //-draw (placeholder for the setBounds() algorythm to work)
 		 {new JTextField(), new JTextField()}, //-forge
 		 {new JTextField()}, //-join
 		 {new JTextField(), new JTextField()}, //-kick
@@ -46,6 +47,7 @@ public class TabCommands extends JPanel
 		 {new JTextField()}, //-longurl
 		 {new JTextField()}, //-letter
 		 {new JTextField()}, //-number
+		 {}, //-scramble (placeholder for the setBounds() algorythm to work)
 		 {new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
@@ -64,11 +66,13 @@ public class TabCommands extends JPanel
 		 new JButton(), //-longurl
 		 new JButton(), //-letter
 		 new JButton(), //-number
+		 new JButton(), //-scramvle
 		};
 	public static JComboBox[] dropDown = 
 		{
 		 new JComboBox(), //-calc
 		 new JComboBox(), //-draw
+		 new JComboBox(), //-scramble
 		};
 
 	public TabCommands()
@@ -91,6 +95,8 @@ public class TabCommands extends JPanel
 		label[11].setText("-longurl");
 		label[12].setText("-letter");
 		label[13].setText("-number");
+		label[14].setText("-scramble");
+		dropDown[2].setBounds(130, 300, 110, 20);
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		util.setLabelBounds(label);

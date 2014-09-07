@@ -17,6 +17,7 @@ import org.pircbotx.Channel;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.Scramble;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
@@ -79,7 +80,7 @@ public class Utilities
 			{
 				if(x == 130 && y == 40) //needed so that the jtextfield at this position doesn't override the dropdown menu
 					x = 260;
-				
+
 				t.setBounds(x, y, 110, 20);
 				x += 130;
 			}
@@ -119,6 +120,11 @@ public class Utilities
 		for(String s : Draw.drawings)
 		{
 			dropDown[1].addItem(s);
+		}
+		
+		for(int i : Scramble.scrambleAmounts)
+		{
+			dropDown[2].addItem(i);
 		}
 	}
 	
@@ -166,11 +172,6 @@ public class Utilities
 		}
 
 		return chans;
-	}
-
-	public static void sorry()
-	{
-		sendMessage(TabCommands.receiver, "Sorry, only certain people are allowed to control me.");
 	}
 
 	public static boolean validUser()

@@ -5,21 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.LinkedList;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Bukkit;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.ChangeNick;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.CraftBukkit;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Decide;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Forge;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Join;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Kick;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leave;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.Leet;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.LongURL;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.RandomLetter;
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.RandomNumber;
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.*;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
@@ -46,6 +32,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new LongURL());
 		commands.add(new RandomLetter());
 		commands.add(new RandomNumber());
+		commands.add(new Scramble());
 	}
 
 	@Override
@@ -74,7 +61,7 @@ public class CommandButtonListener implements ActionListener
 					return;
 				}
 			}
-			System.out.println("Something went wrong.");
+			System.out.println("Something went wrong. Maybe the command you're trying to issue is not added to the commands list yet?");
 		}
 	}
 }
