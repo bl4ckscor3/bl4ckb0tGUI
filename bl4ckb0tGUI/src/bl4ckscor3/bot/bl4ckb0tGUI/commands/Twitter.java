@@ -8,7 +8,7 @@ public class Twitter implements ICommand
 	@Override
 	public void exe()
 	{
-		Utilities.sendMessage(TabCommands.receiver, "http://www.twitter.com/" + TabCommands.text[17][0]);
+		Utilities.sendMessage(TabCommands.receiver, "http://www.twitter.com/" + TabCommands.text[17][0].getText());
 	}
 
 	@Override
