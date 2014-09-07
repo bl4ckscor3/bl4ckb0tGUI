@@ -32,21 +32,21 @@ public class TabCommands extends JPanel
 		};
 	public static JTextField[][] text = 
 		{
-		 new JTextField[]{new JTextField()}, //-bukkit
-		 new JTextField[]{new JTextField()}, //-calc
-		 new JTextField[]{new JTextField()}, //-cbukkit
-		 new JTextField[]{new JTextField()}, //-changenick
-		 new JTextField[]{new JTextField()}, //-decide
-		 new JTextField[]{}, //-draw (placeholder for the setBounds() algorythm to work
-		 new JTextField[]{new JTextField(), new JTextField()}, //-forge
-		 new JTextField[]{new JTextField()}, //-join
-		 new JTextField[]{new JTextField(), new JTextField()}, //-kick
-		 new JTextField[]{new JTextField()}, //-leave
-		 new JTextField[]{new JTextField()}, //-leet
-		 new JTextField[]{new JTextField()}, //-longurl
-		 new JTextField[]{new JTextField()}, //-letter
-		 new JTextField[]{new JTextField()}, //-number
-		 new JTextField[]{new JTextField()}  //chan/user to send to
+		 {new JTextField()}, //-bukkit
+		 {new JTextField()}, //-calc
+		 {new JTextField()}, //-cbukkit
+		 {new JTextField()}, //-changenick
+		 {new JTextField()}, //-decide
+		 {}, //-draw (placeholder for the setBounds() algorythm to work
+		 {new JTextField(), new JTextField()}, //-forge
+		 {new JTextField()}, //-join
+		 {new JTextField(), new JTextField()}, //-kick
+		 {new JTextField()}, //-leave
+		 {new JTextField()}, //-leet
+		 {new JTextField()}, //-longurl
+		 {new JTextField()}, //-letter
+		 {new JTextField()}, //-number
+		 {new JTextField()}  //chan/user to send to
 		};
 	public JButton[] button = 
 		{
