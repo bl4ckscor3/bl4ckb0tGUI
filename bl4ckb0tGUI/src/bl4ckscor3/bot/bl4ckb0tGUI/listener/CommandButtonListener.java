@@ -34,6 +34,7 @@ public class CommandButtonListener implements ActionListener
 		commands.add(new RandomNumber());
 		commands.add(new Scramble());
 		commands.add(new Select());
+		commands.add(new Twitch());
 	}
 
 	@Override
