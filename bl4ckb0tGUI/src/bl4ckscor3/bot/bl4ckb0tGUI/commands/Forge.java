@@ -13,9 +13,9 @@ public class Forge implements ICommand
 	@Override
 	public void exe() throws IOException
 	{
-			if(TabCommands.text[5][0].getText().equalsIgnoreCase("latets") || TabCommands.text[5][0].getText().equalsIgnoreCase("latest"))
+			if(TabCommands.text[6][0].getText().equalsIgnoreCase("latets") || TabCommands.text[6][0].getText().equalsIgnoreCase("latest"))
 			{
-				if(TabCommands.text[5][1].getText().equalsIgnoreCase("version"))
+				if(TabCommands.text[6][1].getText().equalsIgnoreCase("version"))
 				{
 					String result = createResult("<td>Latest</td>", "Version");
 
@@ -24,18 +24,18 @@ public class Forge implements ICommand
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("changelog"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("changelog"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Changelog"));
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("dlmain"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlmain"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Installer"));
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("dlsrc"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlsrc"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
 			}
-			else if(TabCommands.text[5][0].getText().equalsIgnoreCase("rec") || TabCommands.text[5][0].getText().equalsIgnoreCase("recommended"))
+			else if(TabCommands.text[6][0].getText().equalsIgnoreCase("rec") || TabCommands.text[6][0].getText().equalsIgnoreCase("recommended"))
 			{
-				if(TabCommands.text[5][1].getText().equalsIgnoreCase("version"))
+				if(TabCommands.text[6][1].getText().equalsIgnoreCase("version"))
 				{
 					String result = createResult("<td>Recommended</td>", "Version");
 
@@ -44,11 +44,11 @@ public class Forge implements ICommand
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("changelog"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("changelog"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Changelog"));
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("dlmain"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlmain"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Installer"));
-				else if(TabCommands.text[5][1].getText().equalsIgnoreCase("dlsrc"))
+				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlsrc"))
 					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
