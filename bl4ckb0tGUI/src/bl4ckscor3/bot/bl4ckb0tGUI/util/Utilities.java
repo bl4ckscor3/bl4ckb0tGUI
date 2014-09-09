@@ -19,7 +19,6 @@ import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Scramble;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
 

@@ -2,17 +2,21 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class NameGui extends JFrame
 {
@@ -30,6 +34,21 @@ public class NameGui extends JFrame
 
 	public NameGui()
 	{
+		Action action = new AbstractAction()
+		{
+			@Override
+			public void actionPerformed(ActionEvent event)
+			{
+				if(TabControl.firstRun)
+					System.exit(0);
+				else
+					dispose();
+			}
+		};
+		
+		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
+		getRootPane().getActionMap().put("ESCAPE", action);
+		
 		buttonStart = new JButton(accept);
 		cp.setLayout(null);
 		label.setBounds(40, 10, textText.length() * 6, 20);
