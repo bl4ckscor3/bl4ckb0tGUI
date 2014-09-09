@@ -74,11 +74,11 @@ public class Core
 		
 		bot = new PircBotX(config);
 
-//		try
-//		{
-//			bot.startBot();
-//		}
-//		catch(IOException e){}
-//		catch(IrcException e){}
+		try
+		{
+			bot.startBot();
+		}
+		catch(IOException e){}
+		catch(IrcException e){}
 	}
 }

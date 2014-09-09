@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.LinkedList;
 
+import javax.swing.JTextField;
+
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.*;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
@@ -47,6 +49,8 @@ public class CommandButtonListener implements ActionListener
 	{
 		if(enabled)
 		{
+			int i = 0;
+			
 			for(ICommand c : commands)
 			{
 				if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
@@ -56,7 +60,16 @@ public class CommandButtonListener implements ActionListener
 					try
 					{
 						if(!c.getAlias().equals("changenick"))
-							Utilities.sendMessage(TabCommands.receiver, Core.name + " issued this command: -" + c.getAlias() + " ");
+						{
+							String command = c.getAlias() + " ";
+							
+							for(JTextField txt : TabCommands.text[i])
+							{
+								command += txt.getText() + " ";
+							}
+							
+							Utilities.sendMessage(TabCommands.receiver, Core.name + " issued this command: -" + command);
+						}
 						
 						c.exe();
 					}
@@ -67,6 +80,8 @@ public class CommandButtonListener implements ActionListener
 					}	
 					return;
 				}
+				
+				i++;
 			}
 			System.out.println("Something went wrong. Maybe the command you're trying to issue is not added to the commands list yet?");
 		}
