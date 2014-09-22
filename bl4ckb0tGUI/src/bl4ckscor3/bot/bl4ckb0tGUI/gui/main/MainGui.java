@@ -8,6 +8,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
@@ -46,6 +47,10 @@ public class MainGui extends JFrame
 		tabs.addTab("Control", control);
 		tabs.addTab("Commands", cmds);
 		tabs.addTab("Output", output);
+		//adding tooltips to the tabs
+		tabs.setToolTipTextAt(0, "General control elements such as enabling or disabling the bot.");
+		tabs.setToolTipTextAt(1, "All the commands from the bot to execute.");
+		tabs.setToolTipTextAt(2, "Console output. You get focused on this tab when a warning is sent here.");
 		add(tabs);
 	}
 }
