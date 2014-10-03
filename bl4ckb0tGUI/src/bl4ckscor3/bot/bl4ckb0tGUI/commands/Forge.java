@@ -17,19 +17,19 @@ public class Forge implements ICommand
 			{
 				if(TabCommands.text[6][1].getText().equalsIgnoreCase("version"))
 				{
-					String result = createResult("<td>Latest-New</td>", "Version");
+					String result = createResult("<td>Latest</td>", "Version");
 
-					if(result.equalsIgnoreCase(createResult("<td>Recommended-New</td>", "Version")))
+					if(result.equalsIgnoreCase(createResult("<td>Recommended</td>", "Version")))
 						Utilities.sendMessage(TabCommands.receiver,  result + " This is also the recommended build.");
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("changelog"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-New</td>", "Changelog"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Changelog"));
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlmain"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-New</td>", "Installer"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Installer"));
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlsrc"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-New</td>", "Src"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
 			}
@@ -37,19 +37,19 @@ public class Forge implements ICommand
 			{
 				if(TabCommands.text[6][1].getText().equalsIgnoreCase("version"))
 				{
-					String result = createResult("<td>Recommended-New</td>", "Version");
+					String result = createResult("<td>Recommended</td>", "Version");
 
-					if(result.equalsIgnoreCase(createResult("<td>Latest-New</td>", "Version")))
+					if(result.equalsIgnoreCase(createResult("<td>Latest</td>", "Version")))
 						Utilities.sendMessage(TabCommands.receiver, result + " This is also the latest build.");
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("changelog"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-New</td>", "Changelog"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Changelog"));
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlmain"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-New</td>", "Installer"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Installer"));
 				else if(TabCommands.text[6][1].getText().equalsIgnoreCase("dlsrc"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-New</td>", "Src"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
 			}
@@ -59,7 +59,7 @@ public class Forge implements ICommand
 
 	private String createResult(String type, String action) throws IOException
 	{
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://files.minecraftforge.net/minecraftforge/new").openStream()));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://files.minecraftforge.net/").openStream()));
 		String line;
 
 		if(action.equalsIgnoreCase("Version"))
@@ -107,7 +107,7 @@ public class Forge implements ICommand
 				}
 			}
 		}
-		return "Couldn't create a result. Is there a recommended version already?";
+		return TabCommands.text[6][0].getText().equalsIgnoreCase("rec") ? "Couldn't create a result. Is there a recommended version already?" : "Couldn't create a result.";
 	}
 
 	@Override
