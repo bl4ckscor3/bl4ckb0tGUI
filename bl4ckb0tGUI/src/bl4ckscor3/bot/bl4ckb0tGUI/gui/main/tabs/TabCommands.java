@@ -100,6 +100,7 @@ public class TabCommands extends JPanel
 	{
 		setLayout(null);
 
+		//setting the text for the labels
 		label[0].setText("-bukkit");
 		label[1].setText("-calc");
 		dropDown[0].setBounds(130, 40, 110, 20);
@@ -127,6 +128,7 @@ public class TabCommands extends JPanel
 		label[21].setText("-yt");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
+		//finalizing the properties of some components and adding everything to the gui
 		util.setLabelBounds(label);
 		util.setTextBounds(text);
 		util.setButtonProperties(button, label);

@@ -14,6 +14,7 @@ public class NameGuiButtonListener implements ActionListener
 {
 	private NameGui nameGui;
 
+	//setting the instance of the gui
 	public NameGuiButtonListener(NameGui gui)
 	{
 		nameGui = gui;
@@ -35,11 +36,14 @@ public class NameGuiButtonListener implements ActionListener
 				}
 			};
 
+			//checking for null
 			if(!nameGui.text.getText().equals(""))
 				Core.name = nameGui.text.getText();
 
-			Core.nameGui.dispose();
+			//closing the gui
+			nameGui.dispose();
 
+			//setting up the main gui
 			if(TabControl.firstRun)
 			{
 				Core.setupGui();
@@ -48,6 +52,7 @@ public class NameGuiButtonListener implements ActionListener
 		}
 		else if(event.getActionCommand().equals(nameGui.buttonStop.getText()))
 		{
+			//closing the program/window
 			if(TabControl.firstRun)
 				System.exit(0);
 			else

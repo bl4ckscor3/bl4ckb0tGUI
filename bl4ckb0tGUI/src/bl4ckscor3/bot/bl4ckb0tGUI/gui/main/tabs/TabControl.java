@@ -34,12 +34,16 @@ public class TabControl extends JPanel
 		controlButton[4].setText("Source");
 		controlButton[4].setBounds(640, 40, 110, 40); //source
 
-		for(JButton b : controlButton)
-		{
-			if(TabControl.firstRun)
+		//adding the buttons to the gui - button listener gets added multiple times when restarting the program
+		if(TabControl.firstRun)
+		{	
+			for(JButton b : controlButton)
+			{
 				b.addActionListener(new ControlButtonListener());
+			}
 		}
-		
+
+		//adding the buttons to the gui
 		util.addComponentArray(controlButton, this);
 	}
 }

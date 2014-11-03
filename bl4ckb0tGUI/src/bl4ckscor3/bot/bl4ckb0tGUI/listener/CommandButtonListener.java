@@ -20,6 +20,7 @@ public class CommandButtonListener implements ActionListener
 
 	public CommandButtonListener()
 	{
+		//adding all available commands to a linked list to be able to access them easily
 		commands.add(new Bukkit());
 		commands.add(new Calculate());
 		commands.add(new ChangeNick());
@@ -51,14 +52,17 @@ public class CommandButtonListener implements ActionListener
 		{
 			int i = 0;
 			
+			//looping through the commands and searching for the right command to execute
 			for(ICommand c : commands)
 			{
 				if(("Issue '-" + c.getAlias() + "'").equalsIgnoreCase(event.getActionCommand()))
 				{
+					//set the channel to send to - if the program is in development, send it to #bl4ckb0tTest, else send it to whatever the user inputs
 					TabCommands.receiver = Core.dev ? "#bl4ckb0tTest" : TabCommands.text[TabCommands.text.length - 1][0].getText();
 
 					try
 					{
+						//putting all the arguments together to notify users in the channel who issued what commando
 						if(!c.getAlias().equals("changenick"))
 						{
 							String command = c.getAlias() + " ";

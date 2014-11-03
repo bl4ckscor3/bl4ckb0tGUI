@@ -8,6 +8,9 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class BotListener extends ListenerAdapter
 {
+	/**
+	 * Firguring out which channels to join
+	 */
 	@Override
 	public void onConnect(ConnectEvent event) throws Exception 
 	{

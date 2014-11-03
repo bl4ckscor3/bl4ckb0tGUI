@@ -38,9 +38,9 @@ public class MainGui extends JFrame
 		};
 
 		//rerooting the output to the JTextArea in the output tab
-		System.setOut(ps);
-		System.setErr(ps);
-		//code for "pressing escape = close"
+//		System.setOut(ps);
+//		System.setErr(ps);
+		//when pressing the escape button the window closes
 		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
 		getRootPane().getActionMap().put("ESCAPE", action);
 		//setting up the tabs

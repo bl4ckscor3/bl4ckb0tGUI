@@ -34,6 +34,7 @@ public class Utilities
 
 	public static String[] addAutoJoinChans() throws MalformedURLException, IOException
 	{
+		//getting the .txt document with the default channels
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("https://www.dropbox.com/s/tishdl84z1wmcgs/bl4ckb0t%20chans.txt?dl=1").openStream()));
 
 		if(Core.bot.getNick().equals("bl4ckb0t"))
@@ -42,16 +43,33 @@ public class Utilities
 			return new String[]{"#bl4ckb0tTest"};
 	}
 
+	/**
+	 * Sending a message to the target
+	 * 
+	 * @param target - Where the message will be sent to
+	 * @param message - The text to be sent
+	 */
 	public static void sendMessage(String target, String message)
 	{
 		Core.bot.sendIRC().message(target, message);
 	}
 
+	/**
+	 * Generates the text to display on the button
+	 * 
+	 * @param labelArrayPosition - Which position in the array of labels the corresponding label is at
+	 * @param label - The label array
+	 */
 	public static String getButtonText(int labelArrayPosition, JLabel[] label)
 	{
 		return "Issue '" + label[labelArrayPosition].getText() + "'";
 	}
 
+	/**
+	 * Setting the position and size of the JLabels
+	 * 
+	 * @param label - The label array
+	 */
 	public void setLabelBounds(JLabel[] label)
 	{
 		int posY = 20;
@@ -66,6 +84,11 @@ public class Utilities
 		label[label.length - 1].setBounds(55, 675, 800, 20);
 	}
 
+	/**
+	 * Setting the position and size of the JTextFields
+	 * 
+	 * @param text - The text array
+	 */
 	public void setTextBounds(JTextField[][] text)
 	{
 		int x;
@@ -90,7 +113,13 @@ public class Utilities
 		//Special textfields
 		text[text.length - 1][0].setBounds(310, 705, 150, 20);
 	}
-
+	
+	/**
+	 * Setting the position and size of the JButtons and adding their listeners
+	 * 
+	 * @param button - The button array
+	 * @param label - The label array
+	 */
 	public void setButtonProperties(JButton[] button, JLabel[] label)
 	{
 		int posY = 20;
@@ -109,6 +138,11 @@ public class Utilities
 		}
 	}		
 
+	/**
+	 * Adding the options to the drop down menus
+	 * 
+	 * @param dropDown - The array of different dropdown menus
+	 */
 	public void addDropDownTexts(JComboBox[] dropDown)
 	{
 		for(String s : Calculate.operations)
@@ -127,12 +161,24 @@ public class Utilities
 		}
 	}
 	
+	/**
+	 * Adding the components (JLabel, JButton etc.) to the GUI
+	 * 
+	 * @param component - The array to add
+	 * @param panel - The panel to add to
+	 */
 	public void addComponentArray(Component[] component, JPanel panel)
 	{
 		for(Component c : component)
 			panel.add(c);
 	}
 
+	/**
+	 * Adding the components (JLabel, JButton etc.) to the GUI
+	 * 
+	 * @param component - The array to add (double array)
+	 * @param panel - The panel to add to
+	 */
 	public void addNestedComponentArray(Component[][] component, JPanel panel)
 	{
 		for(Component[] comp : component)
@@ -142,6 +188,12 @@ public class Utilities
 		}
 	}
 
+	/**
+	 * Checking if the bot is in that channel
+	 * 
+	 * @param chan - Channel to check if the bot is in
+	 * @return - true if the bot is in the channel, false if not
+	 */
 	public static boolean hasJoinedChannel(String chan)
 	{
 		String[] chans = getJoinedChannels();
@@ -157,22 +209,28 @@ public class Utilities
 		return false;
 	}
 
+	/**
+	 * Getting all the channels the bot is in
+	 */
 	public static String[] getJoinedChannels()
 	{
-		ImmutableSortedSet<Channel> list = Core.bot.getUserBot().getChannels();
-		Object[] x = list.toArray();
-		String[] chans = new String[x.length];
-		int i = 0;
+		ImmutableSortedSet<Channel> list = Core.bot.getUserBot().getChannels(); //getting the channels from pircbotx
+		Object[] x = list.toArray(); //converting the list to an array
+		String[] chans = new String[x.length]; //creating a string array of the length of the object array to be able to save the channel names
+		int i = 0; //counter
 
 		for(Object o : x)
 		{
-			chans[i] = o.toString().split(",")[0].split("=")[1];
+			chans[i] = o.toString().split(",")[0].split("=")[1]; //filtering the channels
 			i++;
 		}
 
 		return chans;
 	}
 
+	/**
+	 * Checking if the user is a user with admin rights
+	 */
 	public static boolean validUser()
 	{	
 		for(String s : validUsers)
@@ -185,6 +243,9 @@ public class Utilities
 		return false;
 	}
 
+	/**
+	 * Getting all users with admin rights
+	 */
 	public static String[] getValidUsers()
 	{
 		return validUsers;

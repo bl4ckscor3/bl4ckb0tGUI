@@ -57,8 +57,7 @@ public class ControlButtonListener implements ActionListener
 			String[] chans = Utilities.getJoinedChannels();
 			StringBuilder builder = new StringBuilder();
 
-			TabCommands.receiver = Core.dev ? "#bl4ckb0tTest" : TabCommands.text[TabCommands.text.length - 1][0].getText();
-			
+			//looping through the channels and adding them all to a string builder
 			for(String s : chans)
 			{
 				if(s != null)
@@ -71,6 +70,7 @@ public class ControlButtonListener implements ActionListener
 		}
 		else if(event.getActionCommand().equals(TabControl.controlButton[4].getText())) //source
 		{
+			//opening the link in the default browser
 			try
 			{
 				Desktop.getDesktop().browse(URI.create("https://github.com/bl4ckscor3/bl4ckb0tGUI"));

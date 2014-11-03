@@ -27,6 +27,9 @@ public class Core
 		setupNameGui();
 	}
 	
+	/**
+	 * Setting up the first GUI which gets displayed
+	 */
 	public static void setupNameGui()
 	{
 		nameGui = new NameGui();
@@ -34,8 +37,9 @@ public class Core
 		nameGui.setTitle("Username selection");
 		nameGui.setFont(new Font("Arial", 0, 14));
 		nameGui.setSize(300, 150);
-		nameGui.setLocationRelativeTo(null);
+		nameGui.setLocationRelativeTo(null); //middle of screen
 		
+		//to make sure that an on-run name change doesn't close the whole process
 		if(TabControl.firstRun)
 			nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		else
@@ -45,6 +49,9 @@ public class Core
 		nameGui.setVisible(true);
 	}
 
+	/**
+	 * Setting up the main gui with all the tabs, etc.
+	 */
 	public static void setupGui()
 	{
 		gui = new MainGui();
@@ -58,6 +65,9 @@ public class Core
 		gui.setVisible(true);
 	}
 
+	/**
+	 * Setting up the bot and starting it
+	 */
 	public static void createBot()
 	{
 		Configuration config = new Configuration.Builder()	

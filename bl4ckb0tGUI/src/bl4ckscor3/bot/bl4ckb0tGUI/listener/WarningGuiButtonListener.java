@@ -8,7 +8,8 @@ import bl4ckscor3.bot.bl4ckb0tGUI.gui.WarningGui;
 public class WarningGuiButtonListener implements ActionListener
 {
 	private WarningGui warningGui;
-	
+
+	//setting the instance of the gui
 	public WarningGuiButtonListener(WarningGui gui)
 	{
 		warningGui = gui;
@@ -17,6 +18,7 @@ public class WarningGuiButtonListener implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent event)
 	{
+		//closing the gui
 		warningGui.dispose();
 	}
 }

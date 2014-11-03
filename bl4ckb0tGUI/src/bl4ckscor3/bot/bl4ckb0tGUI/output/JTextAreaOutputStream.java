@@ -9,6 +9,7 @@ public class JTextAreaOutputStream extends OutputStream
 {
 	private JTextArea area;
 	
+	//setting the instance of the area
 	public JTextAreaOutputStream(JTextArea area)
 	{
 		this.area = area;
@@ -17,6 +18,7 @@ public class JTextAreaOutputStream extends OutputStream
 	@Override
 	public void write(int b) throws IOException
 	{
+		//writing to the area
 		area.append(String.valueOf((char) b));
 		area.setCaretPosition(area.getDocument().getLength());
 	}

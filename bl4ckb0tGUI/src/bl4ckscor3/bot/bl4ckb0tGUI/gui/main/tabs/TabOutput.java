@@ -19,11 +19,15 @@ public class TabOutput extends JPanel
 	{
 		setLayout(null);
 		
+		//fitting everything into the field
 		area.setWrapStyleWord(true);
 		area.setLineWrap(true); 
 		area.setEditable(false);
+		//setting up the scrollbar
 		scrollBar.setBounds(9, 9, 770, 725);
+		//border
 		scrollBar.setBorder(BorderFactory.createTitledBorder("Output"));
+		//what the scroll bar affects
 		scrollBar.setViewportView(area);
 		scrollBar.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		add(scrollBar);

@@ -29,7 +29,7 @@ public class NameGui extends JFrame
 	private Action accept = new AbstractAction("Accept")
 	{
 		@Override
-		public void actionPerformed(ActionEvent event){}//this get's handled by the listener (i don't really know why it needs this, but w/e)
+		public void actionPerformed(ActionEvent event){} //this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
 
 	public NameGui()
@@ -46,6 +46,7 @@ public class NameGui extends JFrame
 			}
 		};
 		
+		//when pressing the escape button the window closes
 		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
 		getRootPane().getActionMap().put("ESCAPE", action);
 		
@@ -55,6 +56,7 @@ public class NameGui extends JFrame
 		label.setText(textText);
 		text.setBounds(42, 40, 200, 20);
 		
+		//when the program gets started, print out "Let's start!" and if there's an on-run name change, print out "Change it!"
 		if(TabControl.firstRun)
 			buttonStart.setText("Let's start!");
 		else
@@ -65,10 +67,11 @@ public class NameGui extends JFrame
 		
 		buttonStart.setBounds(10, 80, 100, 20);
 		buttonStart.addActionListener(new NameGuiButtonListener(this));
-		getRootPane().setDefaultButton(buttonStart);
+		getRootPane().setDefaultButton(buttonStart); //when pressing enter this button gets activated
 		buttonStop.setText("I changed my mind.");
 		buttonStop.setBounds(130, 80, 145 , 20);
 		buttonStop.addActionListener(new NameGuiButtonListener(this));
+		//adding the components to the gui
 		cp.add(label);
 		cp.add(text);
 		cp.add(buttonStart);

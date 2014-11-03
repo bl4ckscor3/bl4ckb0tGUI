@@ -26,7 +26,7 @@ public class WarningGui extends JFrame
 	private Action accept = new AbstractAction("Accept")
 	{
 		@Override
-		public void actionPerformed(ActionEvent event){}//this get's handled by the listener (i don't really know why it needs this, but w/e)
+		public void actionPerformed(ActionEvent event){} //this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
 
 	public WarningGui(String title, String text)
@@ -39,10 +39,12 @@ public class WarningGui extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent event)
 			{
+				//closing the window
 				dispose();
 			}
 		};
-		
+
+		//when pressing the escape button the window closes
 		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
 		getRootPane().getActionMap().put("ESCAPE", action);
 		cp.setLayout(null);
@@ -58,8 +60,9 @@ public class WarningGui extends JFrame
 		button.setText("OK!");
 		button.setBounds(95, 60, 100, 20);
 		button.addActionListener(new WarningGuiButtonListener(this));
-		getRootPane().setDefaultButton(button);
+		getRootPane().setDefaultButton(button); //when pressing enter this button gets activated
 
+		//adding the button to the gui
 		add(label);
 		add(button);
 	}
