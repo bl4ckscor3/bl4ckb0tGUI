@@ -8,6 +8,7 @@ import java.net.URL;
 import org.pircbotx.Colors;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Bukkit implements ICommand
@@ -16,7 +17,7 @@ public class Bukkit implements ICommand
 	public void exe() throws IOException
 	{
 		String buffer = "x";
-		String type = TabCommands.text[0][0].getText();
+		String type = TabCommands.text[CommandPositions.bukkit][0].getText();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://dl.bukkit.org/downloads/bukkit/").openStream()));
 		String[] link;
 		String newUrl;

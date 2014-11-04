@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Decide implements ICommand
@@ -11,7 +12,7 @@ public class Decide implements ICommand
 	@Override
 	public void exe() throws IOException
 	{
-		if(TabCommands.text[4][0].getText().endsWith("?"))
+		if(TabCommands.text[CommandPositions.decide][0].getText().endsWith("?"))
 		{
 			Random r = new Random();
 			int decision = r.nextInt(101);

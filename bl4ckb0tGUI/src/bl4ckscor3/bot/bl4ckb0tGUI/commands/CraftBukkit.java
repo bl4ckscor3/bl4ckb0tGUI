@@ -8,6 +8,7 @@ import java.net.URL;
 import org.pircbotx.Colors;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class CraftBukkit implements ICommand
@@ -18,7 +19,7 @@ public class CraftBukkit implements ICommand
 		String buffer = "x";
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://dl.bukkit.org/downloads/craftbukkit/").openStream()));
 
-		switch(TabCommands.text[2][0].getText())
+		switch(TabCommands.text[CommandPositions.craftbukkit][0].getText())
 		{
 			case "rec":
 				for(int i = 0; i < 1301; i++)

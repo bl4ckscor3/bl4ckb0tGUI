@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Weather implements ICommand
@@ -16,7 +17,7 @@ public class Weather implements ICommand
 	public void exe() throws IOException 
 	{
 		String[] data = new String[19];//1 = name | 3 = country | 6 = temperature | 7 = humidity | 8 = pressure | 10 = wind speed | 11 = wind direction | 13 = clouds
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://api.openweathermap.org/data/2.5/weather?q=" + TabCommands.text[19][0].getText() + "&mode=xml").openStream()));	
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL("http://api.openweathermap.org/data/2.5/weather?q=" + TabCommands.text[CommandPositions.weather][0].getText() + "&mode=xml").openStream()));	
 
 		if(reader.readLine().equalsIgnoreCase("{\"message\":\"Error: Not found city\",\"cod\":\"404\"}"))
 			Utilities.sendMessage(TabCommands.receiver, "Sorry, I couldn't find a city named \"" + TabCommands.text[19][0].getText() + "\" :/");

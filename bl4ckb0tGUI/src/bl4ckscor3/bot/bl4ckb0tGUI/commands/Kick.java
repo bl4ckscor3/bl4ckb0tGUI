@@ -7,6 +7,7 @@ import java.net.URL;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Kick implements ICommand
@@ -45,7 +46,7 @@ public class Kick implements ICommand
 
 		for(String userNotToKick : Utilities.getValidUsers())
 		{
-			if(TabCommands.text[8][0].getText().equalsIgnoreCase(userNotToKick))
+			if(TabCommands.text[CommandPositions.kick][0].getText().equalsIgnoreCase(userNotToKick))
 			{
 				found = true;
 				break;
@@ -54,13 +55,13 @@ public class Kick implements ICommand
 
 		if(!found)
 		{
-			if(TabCommands.text[8][0].getText().equalsIgnoreCase(Core.bot.getNick()))
+			if(TabCommands.text[CommandPositions.kick][0].getText().equalsIgnoreCase(Core.bot.getNick()))
 			{
 				Core.bot.sendIRC().action(TabCommands.receiver, "kicks himself");
-				Core.bot.sendRaw().rawLine("KICK " + TabCommands.receiver + " " + TabCommands.text[8][0].getText() + " :I'm said now :(");
+				Core.bot.sendRaw().rawLine("KICK " + TabCommands.receiver + " " + TabCommands.text[CommandPositions.kick][0].getText() + " :I'm said now :(");
 			}
 			else
-				Core.bot.sendRaw().rawLine("KICK " + TabCommands.receiver + " " + TabCommands.text[8][0].getText() + " :" + TabCommands.text[8][1].getText());
+				Core.bot.sendRaw().rawLine("KICK " + TabCommands.receiver + " " + TabCommands.text[CommandPositions.kick][0].getText() + " :" + TabCommands.text[CommandPositions.kick][1].getText());
 		}
 		else
 			Utilities.sendMessage(TabCommands.receiver, "This user cannot be kicked.");

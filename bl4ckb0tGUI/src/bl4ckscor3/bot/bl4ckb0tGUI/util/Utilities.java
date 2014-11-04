@@ -93,21 +93,23 @@ public class Utilities
 	{
 		int x;
 		int y = 20;
-
+		int i = 0;
+		
 		for(JTextField[] txt : text)
 		{
 			x = 130;
 
 			for(JTextField t : txt)
 			{
-				if(x == 130 && y == 40) //needed so that the jtextfield at this position doesn't override the dropdown menu
-					x = 260;
+				if(i == CommandPositions.calc) //needed so that the jtextfield at this position doesn't override the dropdown menu
+					x += 130;
 
 				t.setBounds(x, y, 110, 20);
 				x += 130;
 			}
 
 			y += 20;
+			i++;
 		}
 
 		//Special textfields
@@ -231,7 +233,7 @@ public class Utilities
 	/**
 	 * Checking if the user is a user with admin rights
 	 */
-	public static boolean validUser()
+	public static boolean isValidUser()
 	{	
 		for(String s : validUsers)
 		{

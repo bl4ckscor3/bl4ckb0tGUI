@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class TabCommands extends JPanel
@@ -101,31 +102,31 @@ public class TabCommands extends JPanel
 		setLayout(null);
 
 		//setting the text for the labels
-		label[0].setText("-bukkit");
-		label[1].setText("-calc");
+		label[CommandPositions.bukkit].setText("-bukkit");
+		label[CommandPositions.calc].setText("-calc");
 		dropDown[0].setBounds(130, 40, 110, 20);
-		label[2].setText("-cbukkit");
-		label[3].setText("-changenick");
-		label[4].setText("-decide");
-		label[5].setText("-draw");
+		label[CommandPositions.craftbukkit].setText("-cbukkit");
+		label[CommandPositions.changenick].setText("-changenick");
+		label[CommandPositions.decide].setText("-decide");
+		label[CommandPositions.draw].setText("-draw");
 		dropDown[1].setBounds(130, 120, 110, 20);
-		label[6].setText("-forge");
-		label[7].setText("-join");
-		label[8].setText("-kick");
-		label[9].setText("-leave");
-		label[10].setText("-leet");
-		label[11].setText("-longurl");
-		label[12].setText("-letter");
-		label[13].setText("-number");
-		label[14].setText("-scramble");
+		label[CommandPositions.forge].setText("-forge");
+		label[CommandPositions.join].setText("-join");
+		label[CommandPositions.kick].setText("-kick");
+		label[CommandPositions.leave].setText("-leave");
+		label[CommandPositions.leet].setText("-leet");
+		label[CommandPositions.longurl].setText("-longurl");
+		label[CommandPositions.letter].setText("-letter");
+		label[CommandPositions.number].setText("-number");
+		label[CommandPositions.scramble].setText("-scramble");
 		dropDown[2].setBounds(130, 300, 110, 20);
-		label[15].setText("-select");
-		label[16].setText("-tv");
-		label[17].setText("-tw");
-		label[18].setText("-vowels");
-		label[19].setText("-w");
-		label[20].setText("-xcolor");
-		label[21].setText("-yt");
+		label[CommandPositions.select].setText("-select");
+		label[CommandPositions.twitch].setText("-tv");
+		label[CommandPositions.twitter].setText("-tw");
+		label[CommandPositions.vowels].setText("-vowels");
+		label[CommandPositions.weather].setText("-w");
+		label[CommandPositions.xcolor].setText("-xcolor");
+		label[CommandPositions.youtube].setText("-yt");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
 
 		//finalizing the properties of some components and adding everything to the gui

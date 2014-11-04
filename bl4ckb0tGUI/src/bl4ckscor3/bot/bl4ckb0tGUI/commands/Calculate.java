@@ -1,6 +1,7 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Calculate implements ICommand
@@ -18,7 +19,7 @@ public class Calculate implements ICommand
 
 	public void exe()
 	{
-		String[] sNumbers = TabCommands.text[1][0].getText().split(" ");
+		String[] sNumbers = TabCommands.text[CommandPositions.calc][0].getText().split(" ");
 		String operation = (String)TabCommands.dropDown[0].getSelectedItem();
 		float[] numbers = new float[sNumbers.length];
 

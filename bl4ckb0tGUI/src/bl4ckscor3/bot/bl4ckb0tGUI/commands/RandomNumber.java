@@ -3,6 +3,7 @@ package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 import java.util.Random;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
+import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class RandomNumber implements ICommand
@@ -12,7 +13,7 @@ public class RandomNumber implements ICommand
 	{
 		StringBuilder output = new StringBuilder();
 		int[] numbs = new int[50];
-		int n = Integer.parseInt(TabCommands.text[13][0].getText());
+		int n = Integer.parseInt(TabCommands.text[CommandPositions.number][0].getText());
 
 			if(!(n > 50))
 			{
