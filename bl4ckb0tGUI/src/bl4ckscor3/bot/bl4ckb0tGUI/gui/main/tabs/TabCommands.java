@@ -15,9 +15,7 @@ public class TabCommands extends JPanel
 	private Utilities util = new Utilities();
 	private JLabel[] label = 
 		{
-		 new JLabel(), //-bukkit
 		 new JLabel(), //-calc
-		 new JLabel(), //-cbukkit
 		 new JLabel(), //-changenick
 		 new JLabel(), //-decide
 		 new JLabel(), //-draw
@@ -41,9 +39,7 @@ public class TabCommands extends JPanel
 		};
 	public static JTextField[][] text = 
 		{
-		 {new JTextField()}, //-bukkit
 		 {new JTextField()}, //-calc
-		 {new JTextField()}, //-cbukkit
 		 {new JTextField()}, //-changenick
 		 {new JTextField()}, //-decide
 		 {}, //-draw (placeholder for the setBounds() algorythm to work)
@@ -67,9 +63,7 @@ public class TabCommands extends JPanel
 		};
 	public JButton[] button = 
 		{
-		 new JButton(), //-bukkit
 		 new JButton(), //-calc
-		 new JButton(), //-cbukkit
 		 new JButton(), //-changenick
 		 new JButton(), //-decide
 		 new JButton(), //-draw
@@ -102,14 +96,12 @@ public class TabCommands extends JPanel
 		setLayout(null);
 
 		//setting the text for the labels
-		label[CommandPositions.bukkit].setText("-bukkit");
 		label[CommandPositions.calc].setText("-calc");
-		dropDown[0].setBounds(130, 40, 110, 20);
-		label[CommandPositions.craftbukkit].setText("-cbukkit");
+		dropDown[0].setBounds(130, 20, 110, 20);
 		label[CommandPositions.changenick].setText("-changenick");
 		label[CommandPositions.decide].setText("-decide");
 		label[CommandPositions.draw].setText("-draw");
-		dropDown[1].setBounds(130, 120, 110, 20);
+		dropDown[1].setBounds(130, 80, 110, 20);
 		label[CommandPositions.forge].setText("-forge");
 		label[CommandPositions.join].setText("-join");
 		label[CommandPositions.kick].setText("-kick");
@@ -119,7 +111,7 @@ public class TabCommands extends JPanel
 		label[CommandPositions.letter].setText("-letter");
 		label[CommandPositions.number].setText("-number");
 		label[CommandPositions.scramble].setText("-scramble");
-		dropDown[2].setBounds(130, 300, 110, 20);
+		dropDown[2].setBounds(130, 260, 110, 20);
 		label[CommandPositions.select].setText("-select");
 		label[CommandPositions.twitch].setText("-tv");
 		label[CommandPositions.twitter].setText("-tw");

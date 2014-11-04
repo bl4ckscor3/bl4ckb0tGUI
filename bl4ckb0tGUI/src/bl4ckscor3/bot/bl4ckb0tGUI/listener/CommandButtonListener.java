@@ -21,10 +21,8 @@ public class CommandButtonListener implements ActionListener
 	public CommandButtonListener()
 	{
 		//adding all available commands to a linked list to be able to access them easily
-		commands.add(new Bukkit());
 		commands.add(new Calculate());
 		commands.add(new ChangeNick());
-		commands.add(new CraftBukkit());
 		commands.add(new Decide());
 		commands.add(new Draw());
 		commands.add(new Forge());
