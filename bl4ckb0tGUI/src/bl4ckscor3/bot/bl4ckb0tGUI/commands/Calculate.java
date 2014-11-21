@@ -125,4 +125,10 @@ public class Calculate implements ICommand
 	{
 		return "calc";
 	}
+	
+	@Override
+	public String getTooltip()
+	{
+		return "This calculates numbers for you.";
+	}
 }

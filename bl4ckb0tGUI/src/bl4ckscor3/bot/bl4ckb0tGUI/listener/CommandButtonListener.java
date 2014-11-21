@@ -15,7 +15,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class CommandButtonListener implements ActionListener
 {
-	private LinkedList<ICommand> commands = new LinkedList();
+	public static LinkedList<ICommand> commands = new LinkedList();
 	public static boolean enabled = true;
 
 	public CommandButtonListener()

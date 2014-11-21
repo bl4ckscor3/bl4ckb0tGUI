@@ -116,4 +116,10 @@ public class Forge implements ICommand
 	{
 		return "forge";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Gives you links to the latest Forge builds and their changelog.";
+	}
 }

@@ -33,4 +33,10 @@ public class Decide implements ICommand
 	{
 		return "decide";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Answers a question with yes or no. A very basic decision.";
+	}
 }

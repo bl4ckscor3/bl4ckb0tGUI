@@ -65,4 +65,10 @@ public class RandomLetter implements ICommand
 	{
 		return "letter";
 	}
+	
+	@Override
+	public String getTooltip()
+	{
+		return "Outputs a number of randomly generated letters.";
+	}
 }

@@ -22,4 +22,10 @@ public class Select implements ICommand
 	{
 		return "select";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Selects from the given options.";
+	}
 }

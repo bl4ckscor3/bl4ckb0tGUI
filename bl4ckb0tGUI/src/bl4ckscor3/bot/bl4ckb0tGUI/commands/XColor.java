@@ -42,4 +42,9 @@ public class XColor implements ICommand
 		return "xcolor";
 	}
 
+	@Override
+	public String getTooltip()
+	{
+		return "Gives you the color codes for soem IRC clients.";
+	}
 }

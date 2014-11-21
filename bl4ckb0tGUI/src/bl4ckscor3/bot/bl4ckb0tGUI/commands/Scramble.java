@@ -75,4 +75,10 @@ public class Scramble implements ICommand
 	{
 		return "scramble";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Gives you a scrambling algorythm for your 3x3 Rubik's Cube.";
+	}
 }

@@ -34,4 +34,11 @@ public class Leave implements ICommand
 	{
 		return "leave";
 	}
+	
+
+	@Override
+	public String getTooltip()
+	{
+		return "The bot leaves the given channel.";
+	}
 }

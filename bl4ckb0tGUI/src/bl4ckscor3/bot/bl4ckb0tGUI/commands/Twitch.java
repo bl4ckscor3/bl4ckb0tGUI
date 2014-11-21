@@ -17,4 +17,10 @@ public class Twitch implements ICommand
 	{
 		return "tv";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Sends the link to the Twitch channel you specified.";
+	}
 }

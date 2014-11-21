@@ -7,4 +7,6 @@ public interface ICommand
 	public void exe() throws IOException;
 	
 	public String getAlias();
+	
+	public String getTooltip();
 }

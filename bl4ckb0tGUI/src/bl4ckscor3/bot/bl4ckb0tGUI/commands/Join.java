@@ -34,4 +34,10 @@ public class Join implements ICommand
 	{
 		return "join";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "The bot joins the given channel.";
+	}
 }

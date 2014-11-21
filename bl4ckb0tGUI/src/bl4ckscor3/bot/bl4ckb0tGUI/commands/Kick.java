@@ -72,4 +72,11 @@ public class Kick implements ICommand
 	{
 		return "kick";
 	}
+	
+
+	@Override
+	public String getTooltip()
+	{
+		return "Kicks a user.";
+	}
 }

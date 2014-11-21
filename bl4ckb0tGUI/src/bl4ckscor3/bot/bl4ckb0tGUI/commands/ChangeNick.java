@@ -20,4 +20,10 @@ public class ChangeNick implements ICommand
 	{
 		return "changenick";
 	}
+	
+	@Override
+	public String getTooltip()
+	{
+		return "Changes the bot's nickname.";
+	}
 }

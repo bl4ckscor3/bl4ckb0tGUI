@@ -393,4 +393,10 @@ public class Draw implements ICommand
 	{
 		return "draw";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Draws an image into the desired channel.";
+	}
 }

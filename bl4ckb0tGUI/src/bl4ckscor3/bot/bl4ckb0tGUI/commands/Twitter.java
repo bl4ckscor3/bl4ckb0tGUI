@@ -17,4 +17,10 @@ public class Twitter implements ICommand
 	{
 		return "tw";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Sends the link to the Twitter profile you specified.";
+	}
 }

@@ -36,4 +36,11 @@ public class Leet implements ICommand
 	{
 		return "leet";
 	}
+	
+
+	@Override
+	public String getTooltip()
+	{
+		return "C0nv3r75 y0ur 53n73nc3 1n70 l337 wr171n6.";
+	}
 }

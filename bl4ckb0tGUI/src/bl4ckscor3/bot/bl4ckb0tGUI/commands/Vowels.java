@@ -33,4 +33,10 @@ public class Vowels implements ICommand
 	{
 		return "vowels";
 	}
+	
+	@Override
+	public String getTooltip()
+	{
+		return "Removes the vowels from your sentence. Pretty useful.";
+	}
 }

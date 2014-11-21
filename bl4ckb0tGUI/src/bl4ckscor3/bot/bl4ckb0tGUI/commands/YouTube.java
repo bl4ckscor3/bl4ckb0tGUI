@@ -17,4 +17,10 @@ public class YouTube implements ICommand
 	{
 		return "yt";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Sends the link to the Youtube channel you specified.";
+	}
 }

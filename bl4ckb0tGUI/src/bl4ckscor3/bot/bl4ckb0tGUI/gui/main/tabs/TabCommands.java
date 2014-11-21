@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
+import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
@@ -120,6 +123,16 @@ public class TabCommands extends JPanel
 		label[CommandPositions.xcolor].setText("-xcolor");
 		label[CommandPositions.youtube].setText("-yt");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
+
+		//setting the tooltips for the labels
+		int i = 0;
+
+		for(ICommand c : CommandButtonListener.commands)
+		{
+			label[i].setToolTipText(c.getTooltip());
+			System.out.println(c.getTooltip() + "    " + label[i].getToolTipText());
+			i++;
+		}
 
 		//finalizing the properties of some components and adding everything to the gui
 		util.setLabelBounds(label);

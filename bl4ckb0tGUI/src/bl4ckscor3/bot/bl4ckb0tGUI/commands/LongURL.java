@@ -36,4 +36,10 @@ public class LongURL implements ICommand
 	{
 		return "longurl";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Retrives the url behind a short link (http://bit.ly/dc8fo1c for example)";
+	}
 }

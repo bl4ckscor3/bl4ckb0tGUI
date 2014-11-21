@@ -73,4 +73,10 @@ public class Weather implements ICommand
 	{
 		return "w";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Notifies you of your local weather. Or anywhere in the world.";
+	}
 }

@@ -34,4 +34,10 @@ public class RandomNumber implements ICommand
 	{
 		return "number";
 	}
+
+	@Override
+	public String getTooltip()
+	{
+		return "Outputs a number of randomly generated numbers.";
+	}
 }
