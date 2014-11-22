@@ -22,4 +22,5 @@ public class CommandPositions
 	public static final int weather = 17;
 	public static final int xcolor = 18;
 	public static final int youtube = 19;
+	public static final int commandAmount = 20;
 }

@@ -97,7 +97,7 @@ public class TabCommands extends JPanel
 	public TabCommands()
 	{
 		setLayout(null);
-
+		
 		//setting the text for the labels
 		label[CommandPositions.calc].setText("-calc");
 		dropDown[0].setBounds(130, 20, 110, 20);
@@ -123,21 +123,18 @@ public class TabCommands extends JPanel
 		label[CommandPositions.xcolor].setText("-xcolor");
 		label[CommandPositions.youtube].setText("-yt");
 		label[label.length - 1].setText("Channel/User to send the message to (if available for the given command). Don't forget the '#' when sending to a channel!");
-
-		//setting the tooltips for the labels
-		int i = 0;
-
-		for(ICommand c : CommandButtonListener.commands)
+		//needs to be set early, because else the commands wont be in the linked list
+		util.setButtonProperties(button, label);
+		
+		//adding the tooltips to the labels (help)
+		for(int i = 0; i < CommandPositions.commandAmount; i++)
 		{
-			label[i].setToolTipText(c.getTooltip());
-			System.out.println(c.getTooltip() + "    " + label[i].getToolTipText());
-			i++;
+			label[i].setToolTipText(CommandButtonListener.commands.get(i).getTooltip());
 		}
-
+		
 		//finalizing the properties of some components and adding everything to the gui
 		util.setLabelBounds(label);
 		util.setTextBounds(text);
-		util.setButtonProperties(button, label);
 		util.addDropDownTexts(dropDown);
 		util.addComponentArray(label, this);
 		util.addNestedComponentArray(text, this);
