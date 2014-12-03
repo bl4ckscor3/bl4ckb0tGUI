@@ -43,7 +43,7 @@ public class Scramble implements ICommand
 			}
 			
 			//comparing the last two ones (preventing an aioob exception in the for loop above)
-			compareDirectly(results, 18);
+			compareDirectly(results, results.length - 2);
 			
 			for(String s : results)
 			{
