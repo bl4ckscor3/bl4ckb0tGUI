@@ -64,9 +64,16 @@ public class ControlButtonListener implements ActionListener
 					builder.append(s + " | ");
 			}
 
-			builder.deleteCharAt(builder.length() - 1);
-			builder.deleteCharAt(builder.length() - 1);
-			Utilities.sendMessage(TabCommands.receiver, "I joined these channels: " + builder.toString());
+			try
+			{
+				builder.deleteCharAt(builder.length() - 1);
+				builder.deleteCharAt(builder.length() - 1);
+				Utilities.sendMessage(TabCommands.receiver, "I joined these channels: " + builder.toString());
+			}
+			catch(StringIndexOutOfBoundsException e)
+			{
+				Utilities.sendMessage(TabCommands.receiver, "No public channels joined.");
+			}
 		}
 		else if(event.getActionCommand().equals(TabControl.controlButton[4].getText())) //source
 		{
