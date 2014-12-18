@@ -14,7 +14,7 @@ public class Join implements ICommand
 	@Override
 	public void exe() throws IOException
 	{
-		String channel = TabCommands.text[CommandPositions.leave][0].getText().startsWith("#") ? TabCommands.text[CommandPositions.leave][0].getText() : "#" + TabCommands.text[CommandPositions.leave][0].getText();
+		String channel = TabCommands.text[CommandPositions.join][0].getText().startsWith("#") ? TabCommands.text[CommandPositions.join][0].getText() : "#" + TabCommands.text[CommandPositions.join][0].getText();
 		
 		if(!Utilities.hasJoinedChannel(channel))
 		{
