@@ -198,7 +198,7 @@ public class Utilities
 	 */
 	public static boolean hasJoinedChannel(String chan)
 	{
-		String[] chans = getJoinedChannels();
+		String[] chans = getJoinedChannelsSecret();
 
 		for(String s : chans)
 		{
@@ -212,7 +212,7 @@ public class Utilities
 	}
 
 	/**
-	 * Getting all the channels the bot is in
+	 * Getting all the channels the bot is in (without secret channels)
 	 */
 	public static String[] getJoinedChannels()
 	{
@@ -232,6 +232,25 @@ public class Utilities
 		return chans;
 	}
 
+	/**
+	 * Getting all the channels the bot is in (with secret channels)
+	 */
+	public static String[] getJoinedChannelsSecret()
+	{
+		ImmutableSortedSet<Channel> list = Core.bot.getUserBot().getChannels(); //getting the channels from pircbotx
+		Object[] x = list.toArray(); //converting the list to an array
+		String[] chans = new String[x.length]; //creating a string array of the length of the object array to be able to save the channel names
+		int i = 0; //counter
+
+		for(Object o : x)
+		{
+			chans[i] = o.toString().split(",")[0].split("=")[1]; //filtering the channels
+			i++;
+		}
+
+		return chans;
+	}
+	
 	/**
 	 * Checking if the user is a user with admin rights
 	 */
