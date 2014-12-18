@@ -17,6 +17,7 @@ public class TabControl extends JPanel
 		 new JButton(), //disabling/enabling the bot
 		 new JButton(), //list channels
 		 new JButton(), //source
+		 new JButton()  //chat window
 		};
 
 	public TabControl()
@@ -33,8 +34,10 @@ public class TabControl extends JPanel
 		controlButton[3].setBounds(500, 40, 120, 40); //list channels
 		controlButton[4].setText("Source");
 		controlButton[4].setBounds(640, 40, 110, 40); //source
-
-		//adding the buttons to the gui - button listener gets added multiple times when restarting the program
+		controlButton[5].setText("Chatting");
+		controlButton[5].setBounds(60, 100, 120, 40); //chat window
+		
+		//adding the buttons to the gui
 		if(TabControl.firstRun)
 		{	
 			for(JButton b : controlButton)

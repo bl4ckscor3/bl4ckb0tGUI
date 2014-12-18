@@ -5,18 +5,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.chat.ChatWindow;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class ControlButtonListener implements ActionListener
 {
+	public ChatWindow chatWindow;
+	
 	@Override
 	public void actionPerformed(ActionEvent event)
 	{
@@ -83,6 +85,10 @@ public class ControlButtonListener implements ActionListener
 				Desktop.getDesktop().browse(URI.create("https://github.com/bl4ckscor3/bl4ckb0tGUI"));
 			}
 			catch(IOException e){}
+		}
+		else if(event.getActionCommand().equals(TabControl.controlButton[5].getText())) //chat window
+		{
+			chatWindow = new ChatWindow();
 		}
 	}
 }

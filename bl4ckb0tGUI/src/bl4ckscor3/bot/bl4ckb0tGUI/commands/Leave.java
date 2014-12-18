@@ -2,9 +2,12 @@ package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
 import java.io.IOException;
 
+import javax.swing.plaf.basic.BasicTabbedPaneUI.TabSelectionHandler;
+
 import org.pircbotx.Colors;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
+import bl4ckscor3.bot.bl4ckb0tGUI.gui.chat.ChatWindow;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
@@ -20,6 +23,13 @@ public class Leave implements ICommand
 		{
 			Utilities.sendMessage(TabCommands.receiver, "I will leave the channel " + Colors.BOLD + channel);
 			Core.bot.sendRaw().rawLine("PART " + channel + " :My master told me that I can't be here anymore :C");
+			ChatWindow.openChannelTabs.remove(channel);
+			
+			for(int i = 0; i < ChatWindow.tabs.getTabCount(); i++)
+			{
+				if(ChatWindow.tabs.getTitleAt(i).equals(channel))
+					ChatWindow.tabs.remove(i);
+			}
 		}
 		else
 			Utilities.sendMessage(TabCommands.receiver, "I'm not in that channel.");
