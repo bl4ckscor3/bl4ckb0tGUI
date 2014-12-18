@@ -14,16 +14,12 @@ public class Join implements ICommand
 	@Override
 	public void exe() throws IOException
 	{
-		if(!TabCommands.text[CommandPositions.join][0].getText().startsWith("#"))
-		{
-			Utilities.sendMessage(TabCommands.receiver, "Channel names start with a hashtag (#)!");
-			return;
-		}
+		String channel = TabCommands.text[CommandPositions.leave][0].getText().startsWith("#") ? TabCommands.text[CommandPositions.leave][0].getText() : "#" + TabCommands.text[CommandPositions.leave][0].getText();
 		
-		if(!Utilities.hasJoinedChannel(TabCommands.text[CommandPositions.join][0].getText()))
+		if(!Utilities.hasJoinedChannel(channel))
 		{
-			Utilities.sendMessage(TabCommands.receiver, "I will join the channel " + Colors.BOLD + TabCommands.text[CommandPositions.join][0].getText());
-			Core.bot.sendIRC().joinChannel(TabCommands.text[CommandPositions.join][0].getText());
+			Utilities.sendMessage(TabCommands.receiver, "I will join the channel " + Colors.BOLD + channel);
+			Core.bot.sendIRC().joinChannel(channel);
 		}
 		else
 			Utilities.sendMessage(TabCommands.receiver, "I already joined that channel.");

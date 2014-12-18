@@ -14,16 +14,12 @@ public class Leave implements ICommand
 	@Override
 	public void exe() throws IOException
 	{
-		if(!TabCommands.text[CommandPositions.leave][0].getText().startsWith("#"))
-		{
-			Utilities.sendMessage(TabCommands.receiver, "Channel names start with a hashtag (#)!");
-			return;
-		}
+		String channel = TabCommands.text[CommandPositions.leave][0].getText().startsWith("#") ? TabCommands.text[CommandPositions.leave][0].getText() : "#" + TabCommands.text[CommandPositions.leave][0].getText();
 		
-		if(Utilities.hasJoinedChannel(TabCommands.text[CommandPositions.leave][0].getText()))
+		if(Utilities.hasJoinedChannel(channel))
 		{
-			Utilities.sendMessage(TabCommands.receiver, "I will leave the channel " + Colors.BOLD + TabCommands.text[CommandPositions.leave][0].getText());
-			Core.bot.sendRaw().rawLine("PART " + TabCommands.text[CommandPositions.leave][0].getText() + " :My master told me that I can't be here anymore :C");
+			Utilities.sendMessage(TabCommands.receiver, "I will leave the channel " + Colors.BOLD + channel);
+			Core.bot.sendRaw().rawLine("PART " + channel + " :My master told me that I can't be here anymore :C");
 		}
 		else
 			Utilities.sendMessage(TabCommands.receiver, "I'm not in that channel.");
