@@ -18,19 +18,19 @@ public class Forge implements ICommand
 			{
 				if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("version"))
 				{
-					String result = createResult("<td>Latest-1.8</td>", "Version");
+					String result = createResult("<td>1.8-Latest</td>", "Version");
 
-					if(result.equalsIgnoreCase(createResult("<td>Recommended-1.8</td>", "Version")))
+					if(result.equalsIgnoreCase(createResult("<td>1.8-Recommended</td>", "Version")))
 						Utilities.sendMessage(TabCommands.receiver,  result + " This is also the recommended build.");
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("changelog"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-1.8</td>", "Changelog"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Latest</td>", "Changelog"));
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("dlmain"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-1.8</td>", "Installer"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Latest</td>", "Installer"));
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("dlsrc"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Latest-1.8</td>", "Src"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Latest</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
 			}
@@ -40,17 +40,17 @@ public class Forge implements ICommand
 				{
 					String result = createResult("<td>Recommended-1.8</td>", "Version");
 
-					if(result.equalsIgnoreCase(createResult("<td>Latest-1.8</td>", "Version")))
+					if(result.equalsIgnoreCase(createResult("<td>1.8-Latest</td>", "Version")))
 						Utilities.sendMessage(TabCommands.receiver, result + " This is also the latest build.");
 					else
 						Utilities.sendMessage(TabCommands.receiver, result);
 				}
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("changelog"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-1.8</td>", "Changelog"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Recommended</td>", "Changelog"));
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("dlmain"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-1.8</td>", "Installer"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Recommended</td>", "Installer"));
 				else if(TabCommands.text[CommandPositions.forge][1].getText().equalsIgnoreCase("dlsrc"))
-					Utilities.sendMessage(TabCommands.receiver, createResult("<td>Recommended-1.8</td>", "Src"));
+					Utilities.sendMessage(TabCommands.receiver, createResult("<td>1.8-Recommended</td>", "Src"));
 				else
 					System.out.println("Wrong usage.");
 			}
