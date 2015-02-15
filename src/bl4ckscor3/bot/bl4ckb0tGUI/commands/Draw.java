@@ -1,10 +1,5 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-import org.pircbotx.hooks.events.MessageEvent;
-
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabCommands;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 

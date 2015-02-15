@@ -2,8 +2,6 @@ package bl4ckscor3.bot.bl4ckb0tGUI.commands;
 
 import java.io.IOException;
 
-import javax.swing.plaf.basic.BasicTabbedPaneUI.TabSelectionHandler;
-
 import org.pircbotx.Colors;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;

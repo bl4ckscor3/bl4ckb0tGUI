@@ -6,8 +6,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.commands.ICommand;
-import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.CommandPositions;
 import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;

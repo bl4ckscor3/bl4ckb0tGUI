@@ -16,7 +16,6 @@ import javax.swing.KeyStroke;
 import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
-import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class NameGui extends JFrame
 {

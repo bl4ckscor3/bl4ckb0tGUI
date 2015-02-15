@@ -2,12 +2,9 @@ package bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 
 //not used yet, will be later.
 public class TabOutput extends JPanel 

@@ -4,9 +4,6 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -16,10 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.KeyStroke;
 
-import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.WarningGuiButtonListener;
-import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class WarningGui extends JFrame
 {

@@ -94,7 +94,7 @@ public class Utilities
 		int x;
 		int y = 20;
 		int i = 0;
-		
+
 		for(JTextField[] txt : text)
 		{
 			x = 130;
@@ -115,7 +115,7 @@ public class Utilities
 		//Special textfields
 		text[text.length - 1][0].setBounds(310, 705, 150, 20);
 	}
-	
+
 	/**
 	 * Setting the position and size of the JButtons and adding their listeners
 	 * 
@@ -126,16 +126,16 @@ public class Utilities
 	{
 		int posY = 20;
 		int i = 0;
-		
+
 		for(JButton b : button)
 		{			
 			b.setBounds(600, posY, 150, 20);
 			posY += 20;
 			b.setText(getButtonText(i, label));
-			
+
 			if(TabControl.firstRun)
 				b.addActionListener(new CommandButtonListener());
-			
+
 			i++;
 		}
 	}		
@@ -151,18 +151,18 @@ public class Utilities
 		{
 			dropDown[0].addItem(s);
 		}
-		
+
 		for(String s : Draw.drawings)
 		{
 			dropDown[1].addItem(s);
 		}
-		
+
 		for(int i : Scramble.scrambleAmounts)
 		{
 			dropDown[2].addItem(i);
 		}
 	}
-	
+
 	/**
 	 * Adding the components (JLabel, JButton etc.) to the GUI
 	 * 
@@ -225,7 +225,7 @@ public class Utilities
 		{
 			if(!o.toString().contains("secret=true"))
 				chans[i] = o.toString().split(",")[0].split("=")[1]; //filtering the channels
-			
+
 			i++;
 		}
 
@@ -250,7 +250,7 @@ public class Utilities
 
 		return chans;
 	}
-	
+
 	/**
 	 * Checking if the user is a user with admin rights
 	 */
