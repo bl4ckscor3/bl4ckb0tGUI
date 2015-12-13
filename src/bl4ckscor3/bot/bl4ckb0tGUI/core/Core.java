@@ -70,7 +70,7 @@ public class Core
 	 */
 	public static void createBot()
 	{
-		Configuration config = new Configuration.Builder()	
+		Configuration<PircBotX> config = new Configuration.Builder<PircBotX>()	
 		.setName("bl4ckb0t1")
 		.setVersion("1.0")
 		.setServerHostname("irc.esper.net")

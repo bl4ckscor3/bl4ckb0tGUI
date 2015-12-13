@@ -6,6 +6,7 @@ import javax.swing.text.PlainDocument;
 
 public class JTextFieldLimited extends PlainDocument
 {
+	private static final long serialVersionUID = 5045461038279784379L;
 	private int limit;
 	private String[] allowedChars;
 	

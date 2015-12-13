@@ -28,8 +28,8 @@ public class Utilities
 {
 	private static String[] validUsers =
 		{
-		"bl4ckscor3",
-		"akino_germany"
+				"bl4ckscor3",
+				"akino_germany"
 		};
 
 	public static String[] addAutoJoinChans() throws MalformedURLException, IOException

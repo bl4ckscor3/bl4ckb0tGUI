@@ -17,8 +17,11 @@ import bl4ckscor3.bot.bl4ckb0tGUI.listener.WarningGuiButtonListener;
 
 public class WarningGui extends JFrame
 {
+	private static final long serialVersionUID = -9090663758308618151L;
 	private Action accept = new AbstractAction("Accept")
 	{
+		private static final long serialVersionUID = -6513793819349093562L;
+
 		@Override
 		public void actionPerformed(ActionEvent event){} //this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
@@ -30,6 +33,8 @@ public class WarningGui extends JFrame
 		JButton button = new JButton(accept);
 		Action action = new AbstractAction()
 		{
+			private static final long serialVersionUID = 3927697781829816141L;
+
 			@Override
 			public void actionPerformed(ActionEvent event)
 			{

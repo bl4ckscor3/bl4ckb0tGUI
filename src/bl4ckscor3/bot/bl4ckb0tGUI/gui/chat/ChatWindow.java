@@ -20,6 +20,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class ChatWindow extends JFrame
 {
+	private static final long serialVersionUID = -6216361487452631526L;
 	public static JTabbedPane tabs = new JTabbedPane();
 	private static JTextField input = new JTextField();
 	private static JButton send = new JButton();
@@ -29,6 +30,8 @@ public class ChatWindow extends JFrame
 	{
 		Action action = new AbstractAction()
 		{
+			private static final long serialVersionUID = -4872869480050427332L;
+
 			@Override
 			public void actionPerformed(ActionEvent event)
 			{

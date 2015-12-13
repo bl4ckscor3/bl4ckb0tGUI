@@ -8,6 +8,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class TabControl extends JPanel
 {
+	private static final long serialVersionUID = 2819044912756549478L;
 	public static boolean firstRun = true;
 	private Utilities util = new Utilities();
 	public static JButton[] controlButton =

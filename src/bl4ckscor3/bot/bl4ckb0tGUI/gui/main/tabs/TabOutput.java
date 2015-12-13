@@ -9,6 +9,7 @@ import javax.swing.ScrollPaneConstants;
 //not used yet, will be later.
 public class TabOutput extends JPanel 
 {
+	private static final long serialVersionUID = -6186699631058070231L;
 	public static JTextArea area = new JTextArea();
 	private JScrollPane scrollBar = new JScrollPane();
 	

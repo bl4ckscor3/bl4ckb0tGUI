@@ -19,6 +19,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.listener.NameGuiButtonListener;
 
 public class NameGui extends JFrame
 {
+	private static final long serialVersionUID = 7567113254637918360L;
 	private JLabel label = new JLabel();
 	public JTextField text = new JTextField();
 	public JButton buttonStart;
@@ -27,6 +28,8 @@ public class NameGui extends JFrame
 	private Container cp = getContentPane();
 	private Action accept = new AbstractAction("Accept")
 	{
+		private static final long serialVersionUID = 8635756219608615288L;
+
 		@Override
 		public void actionPerformed(ActionEvent event){} //this get's handled by the listener (i don't really know why it needs this, but w/e)
 	};
@@ -35,6 +38,8 @@ public class NameGui extends JFrame
 	{
 		Action action = new AbstractAction()
 		{
+			private static final long serialVersionUID = 912811159010488615L;
+
 			@Override
 			public void actionPerformed(ActionEvent event)
 			{

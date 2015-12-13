@@ -19,6 +19,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.output.JTextAreaOutputStream;
 
 public class MainGui extends JFrame
 {
+	private static final long serialVersionUID = 6538798925768695125L;
 	private JTabbedPane tabs = new JTabbedPane();
 	public JPanel control = new TabControl();
 	public JPanel cmds = new TabCommands();
@@ -29,6 +30,8 @@ public class MainGui extends JFrame
 	{
 		Action action = new AbstractAction()
 		{
+			private static final long serialVersionUID = -7752490890562696076L;
+
 			@Override
 			public void actionPerformed(ActionEvent event)
 			{
@@ -37,8 +40,8 @@ public class MainGui extends JFrame
 		};
 
 		//rerooting the output to the JTextArea in the output tab
-//		System.setOut(ps);
-//		System.setErr(ps);
+		System.setOut(ps);
+		System.setErr(ps);
 		//when pressing the escape button the window closes
 		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
 		getRootPane().getActionMap().put("ESCAPE", action);
