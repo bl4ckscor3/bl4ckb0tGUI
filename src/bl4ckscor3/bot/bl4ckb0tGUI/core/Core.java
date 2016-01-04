@@ -1,9 +1,11 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.core;
 
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
@@ -32,21 +34,22 @@ public class Core
 	 */
 	public static void setupNameGui()
 	{
-		nameGui = new NameGui();
-
-		nameGui.setTitle("Username selection");
-		nameGui.setFont(new Font("Arial", 0, 14));
-		nameGui.setSize(300, 150);
-		nameGui.setLocationRelativeTo(null); //middle of screen
-		
-		//to make sure that an on-run name change doesn't close the whole process
-		if(TabControl.firstRun)
-			nameGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		else
-			nameGui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		nameGui.setResizable(false);
-		nameGui.setVisible(true);
+		EventQueue.invokeLater(new Runnable (){
+			@Override
+			public void run()
+			{
+				try
+				{
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+					nameGui = new NameGui();
+					nameGui.setVisible(true);
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**

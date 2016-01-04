@@ -1,6 +1,7 @@
 package bl4ckscor3.bot.bl4ckb0tGUI.gui;
 
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -49,6 +50,19 @@ public class NameGui extends JFrame
 					dispose();
 			}
 		};
+		
+		setTitle("Username selection");
+		setFont(new Font("Arial", 0, 14));
+		setSize(300, 150);
+		setLocationRelativeTo(null); //middle of screen
+		
+		//to make sure that an on-run name change doesn't close the whole process
+		if(TabControl.firstRun)
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		else
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		setResizable(false);
 		
 		//when pressing the escape button the window closes
 		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "ESCAPE");
