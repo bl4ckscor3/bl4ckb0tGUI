@@ -25,6 +25,7 @@ public class ChatWindow extends JFrame
 	private static JTextField input = new JTextField();
 	private static JButton send = new JButton();
 	public static List<String> openChannelTabs = new ArrayList<String>();
+	public static boolean firstRun = true;
 	
 	public ChatWindow()
 	{
@@ -56,8 +57,11 @@ public class ChatWindow extends JFrame
 		send.setBounds(585, 625, 80, 20);
 		send.setText("Send");
 
-		if(ChatTab.firstRun)
+		if(firstRun)
+		{
 			send.addActionListener(new SendButtonListener());
+			firstRun = false;
+		}
 
 		for(String name : Utilities.getJoinedChannelsSecret())
 		{
