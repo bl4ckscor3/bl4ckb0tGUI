@@ -6,8 +6,7 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Calculate implements ICommand
 {
-	public static String[] operations =
-		{
+	public static String[] operations = {
 			"+",
 			"-",
 			"*",
@@ -15,7 +14,7 @@ public class Calculate implements ICommand
 			"^",
 			"%",
 			"!"
-		};
+	};
 
 	public void exe()
 	{
@@ -125,7 +124,7 @@ public class Calculate implements ICommand
 	{
 		return "calc";
 	}
-	
+
 	@Override
 	public String getTooltip()
 	{

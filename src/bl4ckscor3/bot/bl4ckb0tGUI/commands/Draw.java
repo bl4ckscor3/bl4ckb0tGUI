@@ -5,22 +5,21 @@ import bl4ckscor3.bot.bl4ckb0tGUI.util.Utilities;
 
 public class Draw implements ICommand
 {
-	public static String[] drawings =
-		{
-		"smiley",
-		"mario",
-		"batman",
-		"bullshit",
-		"bunny",
-		"cat",
-		"chick",
-		"fly",
-		"invaders",
-		"megaman",
-		"phone",
-		"superman",
-		"stormtrooper",
-		};
+	public static String[] drawings = {
+			"smiley",
+			"mario",
+			"batman",
+			"bullshit",
+			"bunny",
+			"cat",
+			"chick",
+			"fly",
+			"invaders",
+			"megaman",
+			"phone",
+			"superman",
+			"stormtrooper",
+	};
 
 	@Override
 	public void exe()
@@ -70,7 +69,7 @@ public class Draw implements ICommand
 				System.out.println("Invalid dropdown item");
 		}
 	}
-	
+
 	private void smiley()
 	{
 		Utilities.sendMessage(TabCommands.receiver, "1,1          1,1          1,1          ");

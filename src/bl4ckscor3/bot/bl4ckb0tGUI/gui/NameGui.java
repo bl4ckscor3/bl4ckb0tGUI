@@ -27,8 +27,7 @@ public class NameGui extends JFrame
 	public JButton buttonStop = new JButton();
 	private String textText = "Please insert your username below.";
 	private Container cp = getContentPane();
-	private Action accept = new AbstractAction("Accept")
-	{
+	private Action accept = new AbstractAction("Accept"){
 		private static final long serialVersionUID = 8635756219608615288L;
 
 		@Override
@@ -37,8 +36,7 @@ public class NameGui extends JFrame
 
 	public NameGui()
 	{
-		Action action = new AbstractAction()
-		{
+		Action action = new AbstractAction(){
 			private static final long serialVersionUID = 912811159010488615L;
 
 			@Override

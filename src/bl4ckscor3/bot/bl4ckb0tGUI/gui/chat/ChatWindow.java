@@ -28,8 +28,7 @@ public class ChatWindow extends JFrame
 	
 	public ChatWindow()
 	{
-		Action action = new AbstractAction()
-		{
+		Action action = new AbstractAction(){
 			private static final long serialVersionUID = -4872869480050427332L;
 
 			@Override

@@ -15,83 +15,79 @@ public class TabCommands extends JPanel
 	private static final long serialVersionUID = 8161413868335482169L;
 	public static String receiver;
 	private Utilities util = new Utilities();
-	private JLabel[] label = 
-		{
-				new JLabel(), //-calc
-				new JLabel(), //-changenick
-				new JLabel(), //-decide
-				new JLabel(), //-draw
-				new JLabel(), //-forge
-				new JLabel(), //-join
-				new JLabel(), //-kick
-				new JLabel(), //-leave
-				new JLabel(), //-leet
-				new JLabel(), //-longurl
-				new JLabel(), //-letter
-				new JLabel(), //-number
-				new JLabel(), //-scramble
-				new JLabel(), //-select
-				new JLabel(), //-tv
-				new JLabel(), //-tw
-				new JLabel(), //-vowels
-				new JLabel(), //-w
-				new JLabel(), //-xcolor
-				new JLabel(), //-yt
-				new JLabel()  //chan/user to send to
-		};
-	public static JTextField[][] text = 
-		{
-				{new JTextField()}, //-calc
-				{new JTextField()}, //-changenick
-				{new JTextField()}, //-decide
-				{}, //-draw (placeholder for the setBounds() algorythm to work)
-				{new JTextField(), new JTextField()}, //-forge
-				{new JTextField()}, //-join
-				{new JTextField(), new JTextField()}, //-kick
-				{new JTextField()}, //-leave
-				{new JTextField()}, //-leet
-				{new JTextField()}, //-longurl
-				{new JTextField()}, //-letter
-				{new JTextField()}, //-number
-				{}, //-scramble (placeholder for the setBounds() algorythm to work)
-				{new JTextField()}, //-select
-				{new JTextField()}, //-tv
-				{new JTextField()}, //-tw
-				{new JTextField()}, //-vowels
-				{new JTextField()}, //-w
-				{}, //-xcolor
-				{new JTextField()}, //-yt
-				{new JTextField()}  //chan/user to send to
-		};
-	public JButton[] button = 
-		{
-				new JButton(), //-calc
-				new JButton(), //-changenick
-				new JButton(), //-decide
-				new JButton(), //-draw
-				new JButton(), //-forge
-				new JButton(), //-join
-				new JButton(), //-kick
-				new JButton(), //-leave
-				new JButton(), //-leet
-				new JButton(), //-longurl
-				new JButton(), //-letter
-				new JButton(), //-number
-				new JButton(), //-scramble
-				new JButton(), //-select
-				new JButton(), //-tv
-				new JButton(), //-tw
-				new JButton(), //-vowels
-				new JButton(), //-w
-				new JButton(), //-xcolor
-				new JButton()  //-yt
-		};
-	public static JComboBox<?>[] dropDown = 
-		{
-				new JComboBox<String>(), //-calc
-				new JComboBox<String>(), //-draw
-				new JComboBox<Integer>(), //-scramble
-		};
+	private JLabel[] label = {
+			new JLabel(), //-calc
+			new JLabel(), //-changenick
+			new JLabel(), //-decide
+			new JLabel(), //-draw
+			new JLabel(), //-forge
+			new JLabel(), //-join
+			new JLabel(), //-kick
+			new JLabel(), //-leave
+			new JLabel(), //-leet
+			new JLabel(), //-longurl
+			new JLabel(), //-letter
+			new JLabel(), //-number
+			new JLabel(), //-scramble
+			new JLabel(), //-select
+			new JLabel(), //-tv
+			new JLabel(), //-tw
+			new JLabel(), //-vowels
+			new JLabel(), //-w
+			new JLabel(), //-xcolor
+			new JLabel(), //-yt
+			new JLabel()  //chan/user to send to
+	};
+	public static JTextField[][] text = {
+			{new JTextField()}, //-calc
+			{new JTextField()}, //-changenick
+			{new JTextField()}, //-decide
+			{}, //-draw (placeholder for the setBounds() algorythm to work)
+			{new JTextField(), new JTextField()}, //-forge
+			{new JTextField()}, //-join
+			{new JTextField(), new JTextField()}, //-kick
+			{new JTextField()}, //-leave
+			{new JTextField()}, //-leet
+			{new JTextField()}, //-longurl
+			{new JTextField()}, //-letter
+			{new JTextField()}, //-number
+			{}, //-scramble (placeholder for the setBounds() algorythm to work)
+			{new JTextField()}, //-select
+			{new JTextField()}, //-tv
+			{new JTextField()}, //-tw
+			{new JTextField()}, //-vowels
+			{new JTextField()}, //-w
+			{}, //-xcolor
+			{new JTextField()}, //-yt
+			{new JTextField()}  //chan/user to send to
+	};
+	public JButton[] button = {
+			new JButton(), //-calc
+			new JButton(), //-changenick
+			new JButton(), //-decide
+			new JButton(), //-draw
+			new JButton(), //-forge
+			new JButton(), //-join
+			new JButton(), //-kick
+			new JButton(), //-leave
+			new JButton(), //-leet
+			new JButton(), //-longurl
+			new JButton(), //-letter
+			new JButton(), //-number
+			new JButton(), //-scramble
+			new JButton(), //-select
+			new JButton(), //-tv
+			new JButton(), //-tw
+			new JButton(), //-vowels
+			new JButton(), //-w
+			new JButton(), //-xcolor
+			new JButton()  //-yt
+	};
+	public static JComboBox<?>[] dropDown = {
+			new JComboBox<String>(), //-calc
+			new JComboBox<String>(), //-draw
+			new JComboBox<Integer>(), //-scramble
+	};
 
 	public TabCommands()
 	{

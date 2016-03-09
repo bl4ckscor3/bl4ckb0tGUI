@@ -13,7 +13,6 @@ import org.pircbotx.exception.IrcException;
 
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.NameGui;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.MainGui;
-import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.BotListener;
 
 public class Core
@@ -73,11 +72,10 @@ public class Core
 	 */
 	public static void createBot()
 	{
-		Configuration<PircBotX> config = new Configuration.Builder<PircBotX>()	
+		Configuration config = new Configuration.Builder()	
 		.setName("bl4ckb0t1")
 		.setVersion("1.0")
-		.setServerHostname("irc.esper.net")
-		.setServerPort(6667)
+		.addServer("irc.esper.net", 6667)
 		.setNickservPassword("xxx")
 		.setLogin("bl4ckb0t")
 		.setAutoNickChange(true)

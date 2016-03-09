@@ -28,8 +28,7 @@ public class MainGui extends JFrame
 	
 	public MainGui()
 	{
-		Action action = new AbstractAction()
-		{
+		Action action = new AbstractAction(){
 			private static final long serialVersionUID = -7752490890562696076L;
 
 			@Override

@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 
 import org.pircbotx.Channel;
 
+import com.google.common.collect.ImmutableSortedSet;
+
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Calculate;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Draw;
 import bl4ckscor3.bot.bl4ckb0tGUI.commands.Scramble;
@@ -22,15 +24,13 @@ import bl4ckscor3.bot.bl4ckb0tGUI.core.Core;
 import bl4ckscor3.bot.bl4ckb0tGUI.gui.main.tabs.TabControl;
 import bl4ckscor3.bot.bl4ckb0tGUI.listener.CommandButtonListener;
 
-import com.google.common.collect.ImmutableSortedSet;
-
 public class Utilities
 {
-	private static String[] validUsers =
-		{
-				"bl4ckscor3",
-				"akino_germany"
-		};
+	private static String[] validUsers = {
+			"bl4ckscor3",
+			"akino_germany",
+			"Vauff"
+	};
 
 	public static String[] addAutoJoinChans() throws MalformedURLException, IOException
 	{
@@ -45,7 +45,6 @@ public class Utilities
 
 	/**
 	 * Sending a message to the target
-	 * 
 	 * @param target - Where the message will be sent to
 	 * @param message - The text to be sent
 	 */
@@ -56,7 +55,6 @@ public class Utilities
 
 	/**
 	 * Generates the text to display on the button
-	 * 
 	 * @param labelArrayPosition - Which position in the array of labels the corresponding label is at
 	 * @param label - The label array
 	 */
@@ -67,7 +65,6 @@ public class Utilities
 
 	/**
 	 * Setting the position and size of the JLabels
-	 * 
 	 * @param label - The label array
 	 */
 	public void setLabelBounds(JLabel[] label)
@@ -86,7 +83,6 @@ public class Utilities
 
 	/**
 	 * Setting the position and size of the JTextFields
-	 * 
 	 * @param text - The text array
 	 */
 	public void setTextBounds(JTextField[][] text)
@@ -142,9 +138,9 @@ public class Utilities
 
 	/**
 	 * Adding the options to the drop down menus
-	 * 
 	 * @param dropDown - The array of different dropdown menus
 	 */
+	@SuppressWarnings({"unchecked", "rawtypes"})
 	public void addDropDownTexts(JComboBox[] dropDown)
 	{
 		for(String s : Calculate.operations)
@@ -165,7 +161,6 @@ public class Utilities
 
 	/**
 	 * Adding the components (JLabel, JButton etc.) to the GUI
-	 * 
 	 * @param component - The array to add
 	 * @param panel - The panel to add to
 	 */
@@ -177,7 +172,6 @@ public class Utilities
 
 	/**
 	 * Adding the components (JLabel, JButton etc.) to the GUI
-	 * 
 	 * @param component - The array to add (double array)
 	 * @param panel - The panel to add to
 	 */
@@ -192,7 +186,6 @@ public class Utilities
 
 	/**
 	 * Checking if the bot is in that channel
-	 * 
 	 * @param chan - Channel to check if the bot is in
 	 * @return - true if the bot is in the channel, false if not
 	 */

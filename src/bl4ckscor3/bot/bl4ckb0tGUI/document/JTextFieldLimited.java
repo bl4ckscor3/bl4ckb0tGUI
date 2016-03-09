@@ -11,6 +11,7 @@ public class JTextFieldLimited extends PlainDocument
 	private String[] allowedChars;
 	
 	/**
+	 * Constructor
 	 * @param limitation - how many characters can be entered
 	 * @param allowedChars - characters which cannot be entered (blacklist)
 	 */
