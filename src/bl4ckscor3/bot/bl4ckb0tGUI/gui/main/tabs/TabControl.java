@@ -11,15 +11,14 @@ public class TabControl extends JPanel
 	private static final long serialVersionUID = 2819044912756549478L;
 	public static boolean firstRun = true;
 	private Utilities util = new Utilities();
-	public static JButton[] controlButton =
-		{
-		 new JButton(), //change name
-		 new JButton(), //reboot
-		 new JButton(), //disabling/enabling the bot
-		 new JButton(), //list channels
-		 new JButton(), //source
-		 new JButton()  //chat window
-		};
+	public static JButton[] controlButton = {
+			new JButton(), //change name
+			new JButton(), //reboot
+			new JButton(), //disabling/enabling the bot
+			new JButton(), //list channels
+			new JButton(), //source
+			new JButton()  //chat window
+	};
 
 	public TabControl()
 	{
@@ -37,7 +36,7 @@ public class TabControl extends JPanel
 		controlButton[4].setBounds(640, 40, 110, 40); //source
 		controlButton[5].setText("Chatting");
 		controlButton[5].setBounds(60, 100, 120, 40); //chat window
-		
+
 		//adding the buttons to the gui
 		if(TabControl.firstRun)
 		{	
