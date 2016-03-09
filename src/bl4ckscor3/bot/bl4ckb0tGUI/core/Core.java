@@ -27,26 +27,22 @@ public class Core
 	{
 		setupNameGui();
 	}
-	
+
 	/**
 	 * Setting up the first GUI which gets displayed
 	 */
 	public static void setupNameGui()
 	{
-		EventQueue.invokeLater(new Runnable (){
-			@Override
-			public void run()
+		EventQueue.invokeLater(() -> {
+			try
 			{
-				try
-				{
-					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					nameGui = new NameGui();
-					nameGui.setVisible(true);
-				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-				}
+				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				nameGui = new NameGui();
+				nameGui.setVisible(true);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
 			}
 		});
 	}
@@ -73,16 +69,16 @@ public class Core
 	public static void createBot()
 	{
 		Configuration config = new Configuration.Builder()	
-		.setName("bl4ckb0t1")
-		.setVersion("1.0")
-		.addServer("irc.esper.net", 6667)
-		.setNickservPassword("xxx")
-		.setLogin("bl4ckb0t")
-		.setAutoNickChange(true)
-		.addListener(new BotListener())
-		.setMessageDelay(500)
-		.buildConfiguration();
-		
+				.setName("bl4ckb0t1")
+				.setVersion("1.0")
+				.addServer("irc.esper.net", 6667)
+				.setNickservPassword("xxx")
+				.setLogin("bl4ckb0t")
+				.setAutoNickChange(true)
+				.addListener(new BotListener())
+				.setMessageDelay(500)
+				.buildConfiguration();
+
 		bot = new PircBotX(config);
 
 		try
